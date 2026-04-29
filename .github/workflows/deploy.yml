@@ -20,7 +20,7 @@ jobs:
       HOST: ${{ secrets.HOST }}
       USERNAME: ${{ secrets.USERNAME }}
       PASSWORD: ${{ secrets.PASSWORD }}
-      PORT: ${{ secrets.PORT || '22' }}
+      PORT: ${{ secrets.PORT }}
       DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
 
     steps:
@@ -41,10 +41,34 @@ jobs:
 
       - name: Validate deploy secrets
         run: |
-          test -n "$HOST" || (echo "HOST secret is missing" && exit 1)
-          test -n "$USERNAME" || (echo "USERNAME secret is missing" && exit 1)
+          clean_secret() {
+            printf '%s' "$1" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//'
+          }
+
+          CLEAN_HOST="$(clean_secret "$HOST")"
+          CLEAN_USERNAME="$(clean_secret "$USERNAME")"
+          CLEAN_DEPLOY_PATH="$(clean_secret "$DEPLOY_PATH")"
+          CLEAN_PORT="$(clean_secret "${PORT:-22}")"
+          CLEAN_PORT="${CLEAN_PORT:-22}"
+
+          test -n "$CLEAN_HOST" || (echo "HOST secret is missing" && exit 1)
+          test -n "$CLEAN_USERNAME" || (echo "USERNAME secret is missing" && exit 1)
           test -n "$PASSWORD" || (echo "PASSWORD secret is missing" && exit 1)
-          test -n "$DEPLOY_PATH" || (echo "DEPLOY_PATH secret is missing" && exit 1)
+          test -n "$CLEAN_DEPLOY_PATH" || (echo "DEPLOY_PATH secret is missing" && exit 1)
+
+          case "$CLEAN_PORT" in
+            *[!0-9]*)
+              echo "PORT secret must contain only digits, for example 22"
+              exit 1
+              ;;
+          esac
+
+          {
+            echo "DEPLOY_HOST=$CLEAN_HOST"
+            echo "DEPLOY_USERNAME=$CLEAN_USERNAME"
+            echo "DEPLOY_PORT=$CLEAN_PORT"
+            echo "DEPLOY_TARGET_PATH=$CLEAN_DEPLOY_PATH"
+          } >> "$GITHUB_ENV"
 
       - name: Install deployment tools
         run: |
@@ -54,7 +78,7 @@ jobs:
       - name: Configure SSH known hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -p "$PORT" "$HOST" >> ~/.ssh/known_hosts
+          ssh-keyscan -p "$DEPLOY_PORT" "$DEPLOY_HOST" >> ~/.ssh/known_hosts
 
       - name: Sync files to server
         env:
@@ -68,12 +92,12 @@ jobs:
             --exclude "node_modules/" \
             --exclude ".env" \
             --exclude ".env.*" \
-            -e "ssh -p $PORT" \
-            ./ "$USERNAME@$HOST:$DEPLOY_PATH/"
+            -e "ssh -p $DEPLOY_PORT" \
+            ./ "$DEPLOY_USERNAME@$DEPLOY_HOST:$DEPLOY_TARGET_PATH/"
 
       - name: Restart application
         env:
           SSHPASS: ${{ secrets.PASSWORD }}
         run: |
-          sshpass -e ssh -p "$PORT" "$USERNAME@$HOST" \
-            "cd '$DEPLOY_PATH' && docker compose up -d --build && docker image prune -f"
+          sshpass -e ssh -p "$DEPLOY_PORT" "$DEPLOY_USERNAME@$DEPLOY_HOST" \
+            "cd '$DEPLOY_TARGET_PATH' && docker compose up -d --build && docker image prune -f"
