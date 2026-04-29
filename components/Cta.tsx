@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { telegramUrl } from "@/lib/content";
 import { Icon } from "@/components/Icons";
 import { Section } from "@/components/Section";
@@ -16,7 +17,15 @@ export function Cta() {
             Написать в Telegram
           </a>
         </div>
-        <div className="planet-horizon" aria-hidden="true" />
+        <div className="earth-horizon" aria-hidden="true">
+          <Image
+            src="/images/earth-blue-marble.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 767px) 110vw, 720px"
+            className="earth-image"
+          />
+        </div>
       </div>
     </Section>
   );

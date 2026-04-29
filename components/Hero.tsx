@@ -31,7 +31,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative z-10 lg:justify-self-end">
+        <div className="relative z-10 lg:justify-self-center">
           <HeroVisual />
         </div>
       </div>

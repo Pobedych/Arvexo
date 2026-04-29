@@ -1,7 +1,7 @@
 import type { IconName } from "@/components/Icons";
 
-export const telegramUrl = "https://t.me/arvexo";
-export const emailUrl = "mailto:hello@arvexo.com";
+export const telegramUrl = "https://t.me/arvexoai";
+export const emailUrl = "arvexoai@gmail.com";
 
 export const navigation = [
   { label: "Магазин", href: "#shop" },
