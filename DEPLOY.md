@@ -52,11 +52,11 @@ Workflow лежит в `.github/workflows/deploy.yml`.
 Добавьте в GitHub repository secrets:
 
 ```text
-DEPLOY_HOST=SERVER_IP
-DEPLOY_USER=root
-DEPLOY_PORT=22
+HOST=SERVER_IP
+USERNAME=root
+PASSWORD=пароль_пользователя_на_сервере
+PORT=22
 DEPLOY_PATH=/var/www/arvexo
-DEPLOY_SSH_KEY=приватный SSH-ключ для доступа к серверу
 ```
 
 На сервере заранее должны быть установлены Docker и Docker Compose plugin.
