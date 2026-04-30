@@ -7,7 +7,7 @@ export function Projects() {
     <Section id="projects">
       <div>
         <h2 className="section-title">Проекты</h2>
-        <p className="mt-2 text-sm font-medium text-white/[0.55]">Current & future projects</p>
+        <p className="mt-2 text-sm font-medium text-slate-500">Current & future projects</p>
       </div>
       <div className="projects-panel mt-6">
         {projects.map((project) => (

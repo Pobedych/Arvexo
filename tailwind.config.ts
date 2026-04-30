@@ -15,15 +15,12 @@ const config: Config = {
           800: "#0d172b"
         },
         neon: {
-          blue: "#4f8cff",
-          cyan: "#5ce7ff",
-          violet: "#8b5cff",
-          magenta: "#b446ff"
+          blue: "#006DFF",
+          cyan: "#00AEEF"
         }
       },
       boxShadow: {
-        glow: "0 0 34px rgba(79, 140, 255, 0.28)",
-        "glow-violet": "0 0 38px rgba(139, 92, 255, 0.24)"
+        glow: "0 18px 46px rgba(15, 23, 42, 0.08)"
       }
     }
   },
