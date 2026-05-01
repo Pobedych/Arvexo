@@ -2,25 +2,42 @@ import { directions } from "@/lib/content";
 import { Icon } from "@/components/Icons";
 import { Section } from "@/components/Section";
 
+type Direction = (typeof directions)[number];
+
 export function Directions() {
   return (
     <Section id="directions">
-      <h2 className="section-title">Направления</h2>
-      <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="section-heading">
+        <h2 className="section-title">Направления Arvexo</h2>
+        <p className="section-lead">
+          Четыре направления экосистемы: текущие цифровые продукты, стартап-направление и будущие R&D-разработки.
+        </p>
+      </div>
+
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
         {directions.map((item) => (
-          <article key={item.title} className="glow-card group min-h-36 p-6">
-            <div className="flex gap-5">
-              <span className="icon-shell">
-                <Icon name={item.icon} className="h-8 w-8" />
-              </span>
-              <div>
-                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/[0.62]">{item.description}</p>
-              </div>
-            </div>
-          </article>
+          <DirectionCard key={item.title} item={item} />
         ))}
       </div>
     </Section>
+  );
+}
+
+function DirectionCard({ item }: { item: Direction }) {
+  return (
+    <article
+      id={item.href.slice(1)}
+      className={`direction-card anchor-target ${item.featured ? "direction-card-featured" : ""}`}
+    >
+      <div className="mb-8 flex flex-wrap items-center gap-3">
+        <span className="direction-badge">{item.status}</span>
+        <div className="direction-icon-box">
+          <Icon name={item.icon} className="h-7 w-7" />
+        </div>
+      </div>
+
+      <h3>{item.title}</h3>
+      <p>{item.description}</p>
+    </article>
   );
 }

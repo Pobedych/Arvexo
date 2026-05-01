@@ -9,12 +9,14 @@ export function ProductVisual() {
         <span className="bag-handle" />
         <Logo compact />
       </div>
-      <div className="floating-tile tile-ai">AI</div>
+      <div className="floating-tile tile-bot">
+        <Icon name="bot" className="h-6 w-6" />
+      </div>
       <div className="floating-tile tile-vpn">
         <Icon name="shield" className="h-6 w-6" />
       </div>
-      <div className="floating-tile tile-wifi">
-        <Icon name="wifi" className="h-6 w-6" />
+      <div className="floating-tile tile-apps">
+        <Icon name="apps" className="h-6 w-6" />
       </div>
     </div>
   );

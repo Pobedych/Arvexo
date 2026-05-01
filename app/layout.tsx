@@ -3,13 +3,13 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Arvexo - AI, VPN и автоматизация",
+  title: "Arvexo — VPN, Telegram Bots, Family Ecosystem и Care Robot R&D",
   description:
-    "Arvexo - цифровая экосистема AI-сервисов, VPN, Telegram-ботов, mini apps и автоматизации.",
+    "Arvexo — цифровая экосистема сервисов, приватности, семейных технологий и будущих R&D-направлений: VPN, Telegram-боты, Family Ecosystem и Care Robot R&D.",
   openGraph: {
-    title: "Arvexo - цифровая экосистема",
+    title: "Arvexo — VPN, Telegram Bots, Family Ecosystem и Care Robot R&D",
     description:
-      "AI-подписки, приватный доступ, Telegram-боты, mini apps и цифровые решения в одной технологической экосистеме.",
+      "Цифровая экосистема сервисов, приватности, семейных технологий и будущих R&D-направлений Arvexo.",
     type: "website"
   }
 };
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#030711"
+  themeColor: "#0B0F12"
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

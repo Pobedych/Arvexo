@@ -10,17 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          950: "#030711",
-          900: "#07101f",
-          800: "#0d172b"
+          950: "#0B0F12",
+          900: "#12171C",
+          800: "#171D23"
         },
-        neon: {
-          blue: "#006DFF",
-          cyan: "#00AEEF"
+        brand: {
+          green: "#1F6B4F",
+          sage: "#8FAE9D",
+          ivory: "#F5F2EA"
         }
       },
       boxShadow: {
-        glow: "0 18px 46px rgba(15, 23, 42, 0.08)"
+        glow: "0 20px 52px rgba(17, 22, 27, 0.08)"
       }
     }
   },

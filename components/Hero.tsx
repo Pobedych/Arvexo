@@ -1,37 +1,40 @@
-import { telegramUrl } from "@/lib/content";
 import { HeroVisual } from "@/components/HeroVisual";
 import { Icon } from "@/components/Icons";
+
+const badges = ["VPN", "Telegram Bots", "Family Ecosystem", "Care Robot R&D"];
 
 export function Hero() {
   return (
     <section id="top" className="hero-shell">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pt-32 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10 lg:pt-36">
+      <div className="hero-inner mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-[1.08fr_0.92fr]">
         <div className="relative z-10 max-w-3xl">
-          <p className="eyebrow">Digital AI ecosystem</p>
-          <h1 className="max-w-3xl text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-            Arvexo — единая экосистема AI-сервисов, VPN и автоматизации
+          <p className="eyebrow">Premium security-tech ecosystem</p>
+          <h1 className="max-w-3xl text-[2.35rem] font-bold leading-[1.05] text-white sm:text-5xl lg:text-[4rem]">
+            Arvexo — цифровая экосистема сервисов, приватности и семейных технологий
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70">
-            AI-подписки, приватный доступ, Telegram-боты, mini apps и цифровые решения — в одной технологической экосистеме.
+          <p className="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg">
+            VPN, Telegram-боты, семейная экосистема и Care Robot R&D — в одной технологической платформе.
           </p>
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a href="#shop" className="primary-button justify-center px-6 py-4">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#shop" className="primary-button justify-center px-5 py-3">
               <Icon name="bag" className="h-5 w-5" />
               Открыть магазин
             </a>
-            <a href="#directions" className="secondary-button justify-center px-6 py-4">
-              Изучить экосистему
+            <a href="#directions" className="secondary-button justify-center px-5 py-3">
+              Смотреть направления
               <span className="text-lg leading-none">›</span>
             </a>
           </div>
-          <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/[0.54]">
-            <span className="signal-chip">AI services</span>
-            <span className="signal-chip">VPN access</span>
-            <span className="signal-chip">Telegram automation</span>
+          <div className="mt-7 flex flex-wrap gap-2.5 text-sm text-white/[0.56]">
+            {badges.map((badge) => (
+              <span key={badge} className="signal-chip">
+                {badge}
+              </span>
+            ))}
           </div>
         </div>
 
-        <div className="relative z-10 lg:justify-self-center">
+        <div className="relative z-10 hidden lg:block lg:justify-self-center">
           <HeroVisual />
         </div>
       </div>

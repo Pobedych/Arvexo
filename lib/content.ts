@@ -1,59 +1,83 @@
 import type { IconName } from "@/components/Icons";
 
 export const telegramUrl = "https://t.me/arvexoai";
-export const emailUrl = "arvexoai@gmail.com";
+export const emailUrl = "mailto:arvexoai@gmail.com";
 
 export const navigation = [
-  { label: "Магазин", href: "#shop" },
-  { label: "Проекты", href: "#projects" },
-  { label: "О бренде", href: "#about" },
+  { label: "VPN", href: "#vpn" },
+  { label: "Telegram Bots", href: "#telegram-bots" },
+  { label: "Family Ecosystem", href: "#family-ecosystem" },
+  { label: "Care Robot R&D", href: "#care-robot-rd" }
+];
+
+export const mobileNavigation = [
+  ...navigation,
+  { label: "Arvexo Shop", href: "#shop" },
   { label: "Контакты", href: "#contacts" }
+];
+
+export const footerProducts = [
+  { label: "Arvexo Shop", href: "#shop" },
+  { label: "VPN Access", href: "#vpn" },
+  { label: "Telegram Bots", href: "#telegram-bots" }
 ];
 
 export const directions: Array<{
   title: string;
   description: string;
   icon: IconName;
+  href: string;
+  status: string;
+  featured?: boolean;
 }> = [
   {
-    title: "AI Subscriptions",
-    description: "Доступ к AI-сервисам и цифровым подпискам.",
-    icon: "brain"
-  },
-  {
-    title: "VPN & Privacy",
-    description: "Приватный доступ, защита данных и безопасное подключение.",
-    icon: "shield"
+    title: "VPN",
+    description: "Приватный доступ, защита данных и стабильное подключение для личного использования.",
+    icon: "shield",
+    href: "#vpn",
+    status: "Active products"
   },
   {
     title: "Telegram Bots",
-    description: "Боты для задач, поддержки, бизнеса и автоматизации.",
-    icon: "bot"
+    description: "Боты для задач, бизнеса, поддержки и автоматизации.",
+    icon: "bot",
+    href: "#telegram-bots",
+    status: "Active products"
   },
   {
-    title: "Mini Apps",
-    description: "Telegram mini apps для цифровых сервисов и удобных сценариев.",
-    icon: "apps"
+    title: "Family Ecosystem",
+    description: "Семейная цифровая экосистема: сервисы, профили, помощники и единое пространство для семьи.",
+    icon: "network",
+    href: "#family-ecosystem",
+    status: "Startup direction",
+    featured: true
   },
   {
-    title: "Automation",
-    description: "Автоматизация процессов, интеграций и рутинных задач.",
-    icon: "bolt"
-  },
-  {
-    title: "Future R&D",
-    description: "Будущие эксперименты в области AI, автоматизации и робототехники.",
-    icon: "flask"
+    title: "Care Robot R&D",
+    description: "Будущее направление Arvexo: исследования в области роботов-помощников, AI и технологий заботы.",
+    icon: "flask",
+    href: "#care-robot-rd",
+    status: "Future R&D"
   }
 ];
 
-export const projects = [
-  "AI Assistant",
-  "Personal Dashboard",
-  "Server Monitoring",
-  "Telegram Mini Apps",
-  "Automation Tools",
-  "Future R&D Experiments"
+export const familyFeatures = [
+  "Семейные профили",
+  "AI-помощники",
+  "Личные сервисы",
+  "Единое цифровое пространство"
+];
+
+export const projects: Array<{
+  title: string;
+  status: "Active" | "In development" | "Future R&D";
+}> = [
+  { title: "VPN Access", status: "Active" },
+  { title: "Telegram Bots", status: "Active" },
+  { title: "Telegram Mini Apps", status: "Active" },
+  { title: "Family Dashboard", status: "In development" },
+  { title: "AI Family Assistant", status: "In development" },
+  { title: "Care Robot R&D Experiments", status: "Future R&D" }
 ];
 
 export const advantages: Array<{
@@ -62,23 +86,23 @@ export const advantages: Array<{
   icon: IconName;
 }> = [
   {
-    title: "Понятная настройка",
-    description: "Помогаем подключить сервисы без технической путаницы.",
-    icon: "gear"
-  },
-  {
-    title: "Поддержка",
-    description: "Помогаем разобраться с подключением и использованием продуктов.",
-    icon: "headphones"
-  },
-  {
     title: "Приватность",
-    description: "Фокус на безопасном доступе и защите цифровой активности.",
+    description: "Безопасный доступ и защита цифровой активности.",
     icon: "shield"
   },
   {
-    title: "Единая экосистема",
-    description: "Развиваем платформу, где цифровые сервисы работают вместе.",
+    title: "Понятная настройка",
+    description: "Подключение цифровых сервисов без лишней технической сложности.",
+    icon: "gear"
+  },
+  {
+    title: "Полезные продукты",
+    description: "VPN, Telegram-боты и mini apps для реальных задач.",
+    icon: "apps"
+  },
+  {
+    title: "Долгосрочная экосистема",
+    description: "Развитие платформы для семьи, сервисов и будущих технологий.",
     icon: "network"
   }
 ];

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { emailUrl, navigation, telegramUrl } from "@/lib/content";
+import { emailUrl, footerProducts, navigation, telegramUrl } from "@/lib/content";
 import { Icon } from "@/components/Icons";
 import { Logo } from "@/components/Logo";
 
@@ -10,12 +10,12 @@ const documents = [
 
 export function Footer() {
   return (
-    <footer id="contacts" className="border-t border-white/[0.08] bg-ink-950/[0.65]">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-10 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <footer id="contacts">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-10 sm:px-8 md:grid-cols-[1.35fr_1fr_1fr_1fr_1fr]">
         <div>
           <Logo />
           <p className="mt-5 max-w-xs text-sm leading-6 text-white/[0.58]">
-            Цифровая экосистема AI-сервисов, VPN и автоматизации.
+            Цифровая экосистема сервисов, приватности, семейных технологий и future R&D.
           </p>
           <div className="mt-5 flex gap-3">
             <a href={telegramUrl} className="social-link" aria-label="Telegram" target="_blank" rel="noreferrer">
@@ -29,6 +29,14 @@ export function Footer() {
 
         <FooterColumn title="Навигация">
           {navigation.map((item) => (
+            <a key={item.href} href={item.href} className="footer-link">
+              {item.label}
+            </a>
+          ))}
+        </FooterColumn>
+
+        <FooterColumn title="Продукты">
+          {footerProducts.map((item) => (
             <a key={item.href} href={item.href} className="footer-link">
               {item.label}
             </a>
@@ -53,7 +61,7 @@ export function Footer() {
         </FooterColumn>
       </div>
       <div className="border-t border-white/[0.06] px-5 py-5 text-center text-xs text-white/[0.42]">
-        © 2024 Arvexo. Все права защищены.
+        © 2026 Arvexo, Inc.
       </div>
     </footer>
   );

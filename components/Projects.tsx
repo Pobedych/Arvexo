@@ -1,19 +1,24 @@
 import { projects } from "@/lib/content";
-import { Icon } from "@/components/Icons";
 import { Section } from "@/components/Section";
+
+const statusClass = {
+  Active: "active",
+  "In development": "in-development",
+  "Future R&D": "future"
+};
 
 export function Projects() {
   return (
     <Section id="projects">
-      <div>
-        <h2 className="section-title">Проекты</h2>
-        <p className="mt-2 text-sm font-medium text-slate-500">Current & future projects</p>
+      <div className="section-heading">
+        <h2 className="section-title">Проекты и развитие</h2>
+        <p className="section-lead">Current products, startup direction and future R&D.</p>
       </div>
-      <div className="projects-panel mt-6">
+      <div className="roadmap mt-7">
         {projects.map((project) => (
-          <div key={project} className="project-item">
-            <Icon name="check" className="h-6 w-6 text-neon-blue" />
-            <span>{project}</span>
+          <div key={project.title} className="roadmap-item">
+            <span className={`roadmap-status roadmap-status-${statusClass[project.status]}`}>{project.status}</span>
+            <span>{project.title}</span>
           </div>
         ))}
       </div>

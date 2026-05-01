@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { telegramUrl } from "@/lib/content";
 import { Icon } from "@/components/Icons";
 import { Section } from "@/components/Section";
@@ -7,24 +6,15 @@ export function Cta() {
   return (
     <Section>
       <div className="cta-card">
-        <div className="relative z-10 max-w-xl">
+        <div className="relative z-10 max-w-2xl">
           <h2 className="section-title">Join the Arvexo ecosystem</h2>
           <p className="mt-4 text-base leading-8 text-white/70">
-            Подключайте AI-сервисы, VPN и автоматизацию в одной цифровой экосистеме.
+            Подключайте цифровые сервисы, приватные технологии и продукты Arvexo в одной экосистеме.
           </p>
-          <a href={telegramUrl} className="primary-button mt-7 inline-flex px-6 py-4" target="_blank" rel="noreferrer">
+          <a href={telegramUrl} className="primary-button mt-7 inline-flex px-5 py-3" target="_blank" rel="noreferrer">
             <Icon name="telegram" className="h-5 w-5" />
             Написать в Telegram
           </a>
-        </div>
-        <div className="earth-horizon" aria-hidden="true">
-          <Image
-            src="/images/earth-blue-marble.jpg"
-            alt=""
-            fill
-            sizes="(max-width: 767px) 110vw, 720px"
-            className="earth-image"
-          />
         </div>
       </div>
     </Section>
