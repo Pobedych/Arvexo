@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { mobileNavigation, navigation } from "@/lib/content";
+import { mobileNavigation, navigation, telegramUrl } from "@/lib/content";
 import { Icon } from "@/components/Icons";
 import { Logo } from "@/components/Logo";
 
@@ -17,7 +17,7 @@ export function Header() {
           <Logo />
         </a>
 
-        <nav className="hidden items-center gap-8 text-sm font-medium lg:flex" aria-label="Основная навигация">
+        <nav className="hidden items-center gap-7 text-sm font-medium lg:flex" aria-label="Main navigation">
           {navigation.map((item) => (
             <a key={item.href} href={item.href} className="nav-link">
               {item.label}
@@ -26,9 +26,12 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a href="#shop" className="primary-button header-cta px-5 py-2.5">
-            <Icon name="bag" className="h-4 w-4" />
-            Открыть магазин
+          <a href="#contacts" className="secondary-button header-cta px-4 py-2">
+            Contacts
+          </a>
+          <a href={telegramUrl} className="primary-button header-cta px-5 py-2.5" target="_blank" rel="noreferrer">
+            <Icon name="telegram" className="h-4 w-4" />
+            Написать в Telegram
           </a>
         </div>
 
@@ -46,12 +49,16 @@ export function Header() {
 
       {menuOpen && (
         <div id="mobile-navigation" className="mobile-menu mobile-menu-open lg:hidden">
-          <nav className="grid gap-2 px-5 pb-5 pt-2" aria-label="Мобильная навигация">
+          <nav className="grid gap-2 px-5 pb-5 pt-2" aria-label="Mobile navigation">
             {mobileNavigation.map((item) => (
               <a key={item.href} href={item.href} className="mobile-nav-link" onClick={closeMenu}>
                 {item.label}
               </a>
             ))}
+            <a href={telegramUrl} className="primary-button justify-center px-5 py-3" onClick={closeMenu} target="_blank" rel="noreferrer">
+              <Icon name="telegram" className="h-4 w-4" />
+              Написать в Telegram
+            </a>
           </nav>
         </div>
       )}

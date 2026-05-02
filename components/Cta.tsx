@@ -7,9 +7,9 @@ export function Cta() {
     <Section>
       <div className="cta-card">
         <div className="relative z-10 max-w-2xl">
-          <h2 className="section-title">Join the Arvexo ecosystem</h2>
+          <h2 className="section-title">Build the Arvexo ecosystem</h2>
           <p className="mt-4 text-base leading-8 text-white/70">
-            Подключайте цифровые сервисы, приватные технологии и продукты Arvexo в одной экосистеме.
+            Connect privacy tools, Telegram automation, family technologies and future care R&D in one ecosystem.
           </p>
           <a href={telegramUrl} className="primary-button mt-7 inline-flex px-5 py-3" target="_blank" rel="noreferrer">
             <Icon name="telegram" className="h-5 w-5" />

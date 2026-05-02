@@ -11,11 +11,12 @@ export function Shop() {
           <p className="eyebrow">Digital products</p>
           <h2 className="section-title">Arvexo Shop</h2>
           <p className="mt-5 text-base leading-8 text-white/[0.68] sm:text-lg">
-            Магазин цифровых продуктов Arvexo: VPN-доступ, Telegram-боты, mini apps и сервисы для личных и профессиональных задач.
+            Digital products by Arvexo: VPN access, Telegram bots, mini apps and services for personal
+            and professional tasks.
           </p>
           <a href={telegramUrl} className="primary-button mt-7 inline-flex px-5 py-3" target="_blank" rel="noreferrer">
             <Icon name="bag" className="h-5 w-5" />
-            Перейти в магазин
+            Open shop
           </a>
         </div>
         <ProductVisual />

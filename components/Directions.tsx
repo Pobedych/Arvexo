@@ -1,6 +1,7 @@
 import { directions } from "@/lib/content";
 import { Icon } from "@/components/Icons";
 import { Section } from "@/components/Section";
+import { DirectionMockup } from "@/components/UiMockups";
 
 type Direction = (typeof directions)[number];
 
@@ -8,9 +9,9 @@ export function Directions() {
   return (
     <Section id="directions">
       <div className="section-heading">
-        <h2 className="section-title">Направления Arvexo</h2>
+        <h2 className="section-title">Наши направления</h2>
         <p className="section-lead">
-          Четыре направления экосистемы: текущие цифровые продукты, стартап-направление и будущие R&D-разработки.
+          Четыре направления Arvexo: текущие цифровые продукты, семейная экосистема и future R&D.
         </p>
       </div>
 
@@ -25,19 +26,18 @@ export function Directions() {
 
 function DirectionCard({ item }: { item: Direction }) {
   return (
-    <article
-      id={item.href.slice(1)}
-      className={`direction-card anchor-target ${item.featured ? "direction-card-featured" : ""}`}
-    >
-      <div className="mb-8 flex flex-wrap items-center gap-3">
-        <span className="direction-badge">{item.status}</span>
-        <div className="direction-icon-box">
-          <Icon name={item.icon} className="h-7 w-7" />
+    <article id={item.href.slice(1)} className="direction-card anchor-target">
+      <div className="direction-copy">
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <div className="direction-icon-box">
+            <Icon name={item.icon} className="h-6 w-6" />
+          </div>
+          <span className="direction-badge">{item.status}</span>
         </div>
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
       </div>
-
-      <h3>{item.title}</h3>
-      <p>{item.description}</p>
+      <DirectionMockup visual={item.visual} />
     </article>
   );
 }

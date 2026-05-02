@@ -1,21 +1,21 @@
 import type { ReactNode } from "react";
-import { emailUrl, footerProducts, navigation, telegramUrl } from "@/lib/content";
+import { emailUrl, footerProducts, telegramUrl } from "@/lib/content";
 import { Icon } from "@/components/Icons";
 import { Logo } from "@/components/Logo";
 
 const documents = [
-  { label: "Политика конфиденциальности", href: "/privacy" },
-  { label: "Пользовательское соглашение", href: "/terms" }
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms", href: "/terms" }
 ];
 
 export function Footer() {
   return (
     <footer id="contacts">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-10 sm:px-8 md:grid-cols-[1.35fr_1fr_1fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-10 sm:px-8 md:grid-cols-[1.35fr_1fr_1fr_1fr]">
         <div>
           <Logo />
           <p className="mt-5 max-w-xs text-sm leading-6 text-white/[0.58]">
-            Цифровая экосистема сервисов, приватности, семейных технологий и future R&D.
+            Arvexo is a digital ecosystem for privacy, family technologies, Telegram automation and future care R&D.
           </p>
           <div className="mt-5 flex gap-3">
             <a href={telegramUrl} className="social-link" aria-label="Telegram" target="_blank" rel="noreferrer">
@@ -27,15 +27,7 @@ export function Footer() {
           </div>
         </div>
 
-        <FooterColumn title="Навигация">
-          {navigation.map((item) => (
-            <a key={item.href} href={item.href} className="footer-link">
-              {item.label}
-            </a>
-          ))}
-        </FooterColumn>
-
-        <FooterColumn title="Продукты">
+        <FooterColumn title="Arvexo">
           {footerProducts.map((item) => (
             <a key={item.href} href={item.href} className="footer-link">
               {item.label}
@@ -43,7 +35,7 @@ export function Footer() {
           ))}
         </FooterColumn>
 
-        <FooterColumn title="Связь">
+        <FooterColumn title="Contacts">
           <a href={telegramUrl} className="footer-link" target="_blank" rel="noreferrer">
             Telegram
           </a>
@@ -52,7 +44,7 @@ export function Footer() {
           </a>
         </FooterColumn>
 
-        <FooterColumn title="Документы">
+        <FooterColumn title="Legal">
           {documents.map((item) => (
             <a key={item.href} href={item.href} className="footer-link">
               {item.label}
@@ -61,7 +53,7 @@ export function Footer() {
         </FooterColumn>
       </div>
       <div className="border-t border-white/[0.06] px-5 py-5 text-center text-xs text-white/[0.42]">
-        © 2026 Arvexo, Inc.
+        © 2026 Arvexo
       </div>
     </footer>
   );

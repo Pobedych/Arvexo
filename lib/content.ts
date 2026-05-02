@@ -12,15 +12,17 @@ export const navigation = [
 
 export const mobileNavigation = [
   ...navigation,
-  { label: "Arvexo Shop", href: "#shop" },
-  { label: "Контакты", href: "#contacts" }
+  { label: "Contacts", href: "#contacts" }
 ];
 
 export const footerProducts = [
-  { label: "Arvexo Shop", href: "#shop" },
-  { label: "VPN Access", href: "#vpn" },
-  { label: "Telegram Bots", href: "#telegram-bots" }
+  { label: "VPN", href: "#vpn" },
+  { label: "Telegram Bots", href: "#telegram-bots" },
+  { label: "Family Ecosystem", href: "#family-ecosystem" },
+  { label: "Care Robot R&D", href: "#care-robot-rd" }
 ];
+
+export type DirectionVisual = "vpn" | "bots" | "family" | "robot";
 
 export const directions: Array<{
   title: string;
@@ -28,81 +30,114 @@ export const directions: Array<{
   icon: IconName;
   href: string;
   status: string;
-  featured?: boolean;
+  visual: DirectionVisual;
 }> = [
   {
     title: "VPN",
-    description: "Приватный доступ, защита данных и стабильное подключение для личного использования.",
+    description: "Приватный доступ, защита данных и стабильное подключение.",
     icon: "shield",
     href: "#vpn",
-    status: "Active products"
+    status: "Protected",
+    visual: "vpn"
   },
   {
     title: "Telegram Bots",
     description: "Боты для задач, бизнеса, поддержки и автоматизации.",
     icon: "bot",
     href: "#telegram-bots",
-    status: "Active products"
+    status: "Running",
+    visual: "bots"
   },
   {
     title: "Family Ecosystem",
-    description: "Семейная цифровая экосистема: сервисы, профили, помощники и единое пространство для семьи.",
+    description:
+      "Семейная цифровая экосистема: профили, помощники, сервисы и единое пространство для семьи.",
     icon: "network",
     href: "#family-ecosystem",
-    status: "Startup direction",
-    featured: true
+    status: "In development",
+    visual: "family"
   },
   {
     title: "Care Robot R&D",
-    description: "Будущее направление Arvexo: исследования в области роботов-помощников, AI и технологий заботы.",
+    description:
+      "Будущее направление Arvexo: исследования в области роботов-помощников, AI и технологий заботы.",
     icon: "flask",
     href: "#care-robot-rd",
-    status: "Future R&D"
+    status: "Future R&D",
+    visual: "robot"
   }
 ];
 
-export const familyFeatures = [
-  "Семейные профили",
-  "AI-помощники",
-  "Личные сервисы",
-  "Единое цифровое пространство"
-];
+export type ProcessVisual = "checklist" | "dashboard" | "research" | "platform";
 
-export const projects: Array<{
+export const processSteps: Array<{
+  eyebrow: string;
   title: string;
-  status: "Active" | "In development" | "Future R&D";
+  description: string;
+  status: string;
+  visual: ProcessVisual;
 }> = [
-  { title: "VPN Access", status: "Active" },
-  { title: "Telegram Bots", status: "Active" },
-  { title: "Telegram Mini Apps", status: "Active" },
-  { title: "Family Dashboard", status: "In development" },
-  { title: "AI Family Assistant", status: "In development" },
-  { title: "Care Robot R&D Experiments", status: "Future R&D" }
+  {
+    eyebrow: "Step 1",
+    title: "Digital products",
+    description: "VPN and Telegram Bots as active commercial products.",
+    status: "Active",
+    visual: "checklist"
+  },
+  {
+    eyebrow: "Step 2",
+    title: "Family ecosystem",
+    description: "Family profiles, dashboards and AI assistants.",
+    status: "In development",
+    visual: "dashboard"
+  },
+  {
+    eyebrow: "Step 3",
+    title: "Care Robot R&D",
+    description: "Research direction for future care robots and AI-powered devices.",
+    status: "Research",
+    visual: "research"
+  },
+  {
+    eyebrow: "Step 4",
+    title: "Unified platform",
+    description:
+      "Long-term ecosystem where services, family tools and future devices work together.",
+    status: "Long-term",
+    visual: "platform"
+  }
 ];
 
-export const advantages: Array<{
+export type VisionVisual = "privacy" | "automation" | "family" | "robot";
+
+export const visionCards: Array<{
   title: string;
   description: string;
   icon: IconName;
+  visual: VisionVisual;
 }> = [
   {
-    title: "Приватность",
-    description: "Безопасный доступ и защита цифровой активности.",
-    icon: "shield"
+    title: "Privacy-first access",
+    description: "Secure connectivity and personal data protection for everyday digital work.",
+    icon: "shield",
+    visual: "privacy"
   },
   {
-    title: "Понятная настройка",
-    description: "Подключение цифровых сервисов без лишней технической сложности.",
-    icon: "gear"
+    title: "Telegram automation",
+    description: "Bots, mini apps and workflows for support, sales and notifications.",
+    icon: "bot",
+    visual: "automation"
   },
   {
-    title: "Полезные продукты",
-    description: "VPN, Telegram-боты и mini apps для реальных задач.",
-    icon: "apps"
+    title: "Family dashboard",
+    description: "Shared profiles, reminders, assistants and protected family services.",
+    icon: "network",
+    visual: "family"
   },
   {
-    title: "Долгосрочная экосистема",
-    description: "Развитие платформы для семьи, сервисов и будущих технологий.",
-    icon: "network"
+    title: "Future care robot research",
+    description: "R&D track for assistant devices, sensors and AI-powered care scenarios.",
+    icon: "flask",
+    visual: "robot"
   }
 ];
