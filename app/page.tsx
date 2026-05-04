@@ -1,27 +1,21 @@
-import { Cta } from "@/components/Cta";
-import { Directions } from "@/components/Directions";
-import { FamilyEcosystem } from "@/components/FamilyEcosystem";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import { CTASection } from "@/components/CTASection";
 import { Hero } from "@/components/Hero";
-import { Process } from "@/components/Process";
-import { Shop } from "@/components/Shop";
-import { VisionCards } from "@/components/VisionCards";
+import { SectionBlock } from "@/components/SectionBlock";
+import { directions } from "@/lib/content";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <Directions />
-        <Process />
-        <Shop />
-        <FamilyEcosystem />
-        <VisionCards />
-        <Cta />
-      </main>
-      <Footer />
+      <Hero />
+      <div className="home-block-stack">
+        {directions.map((direction, index) => (
+          <SectionBlock key={direction.slug} direction={direction} reversed={index % 2 === 1} />
+        ))}
+      </div>
+      <CTASection
+        title="Build the Arvexo ecosystem"
+        subtitle="Connect privacy tools, Telegram automation, family technologies and future Care Robot R&D in one premium digital ecosystem."
+      />
     </>
   );
 }
