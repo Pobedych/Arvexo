@@ -1,41 +1,47 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { navigation, telegramUrl } from "@/lib/content";
+import { Button } from "@/components/Button";
 import { Icon } from "@/components/Icons";
 import { Logo } from "@/components/Logo";
+import { mobileNavigation, navigation } from "@/lib/content";
 
 export function Header() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/5 bg-ink-950/70 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="focus-ring rounded-lg">
+    <header className="site-header">
+      <div className="header-bar">
+        <Link href="/" className="focus-ring rounded-md" onClick={closeMenu} aria-label="Arvexo home">
           <Logo />
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-10 text-sm font-medium text-white/[0.82] lg:flex" aria-label="Основная навигация">
+        <nav className="desktop-nav" aria-label="Main navigation">
           {navigation.map((item) => (
-            <a key={item.href} href={item.href} className="nav-link">
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`nav-link ${pathname === item.href ? "nav-link-active" : ""}`}
+            >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <a href={telegramUrl} className="secondary-button px-5 py-3" target="_blank" rel="noreferrer">
-            <Icon name="telegram" className="h-4 w-4" />
-            Написать в Telegram
-          </a>
+        <div className="desktop-cta">
+          <Button href="/contacts" className="header-cta px-5 py-2.5">
+            Get in touch
+          </Button>
         </div>
 
         <button
           type="button"
-          className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.12] bg-white/[0.06] text-white lg:hidden"
-          aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
+          className="focus-ring mobile-menu-button"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
           onClick={() => setMenuOpen((value) => !value)}
@@ -45,17 +51,21 @@ export function Header() {
       </div>
 
       {menuOpen && (
-        <div id="mobile-navigation" className="mobile-menu mobile-menu-open lg:hidden">
-          <nav className="grid gap-2 px-5 pb-5" aria-label="Мобильная навигация">
-            {navigation.map((item) => (
-              <a key={item.href} href={item.href} className="mobile-nav-link" onClick={closeMenu}>
+        <div id="mobile-navigation" className="mobile-menu mobile-menu-open">
+          <nav className="mobile-nav" aria-label="Mobile navigation">
+            {mobileNavigation.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`mobile-nav-link ${pathname === item.href ? "mobile-nav-link-active" : ""}`}
+                onClick={closeMenu}
+              >
                 {item.label}
-              </a>
+              </Link>
             ))}
-            <a href={telegramUrl} className="primary-button mt-2 justify-center py-3" target="_blank" rel="noreferrer" onClick={closeMenu}>
-              <Icon name="telegram" className="h-4 w-4" />
-              Написать в Telegram
-            </a>
+            <Button href="/contacts" className="justify-center px-5 py-3" onClick={closeMenu}>
+              Get in touch
+            </Button>
           </nav>
         </div>
       )}
