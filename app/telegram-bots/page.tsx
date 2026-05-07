@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { DirectionPage } from "@/components/DirectionPage";
-import { getDirection } from "@/lib/content";
+import { SimplePage } from "@/components/SimplePage";
 
 export const metadata: Metadata = {
-  title: "Arvexo Telegram Bots — Automation and Business Workflows",
-  description: "Arvexo Telegram Bots is an active commercial direction for support bots, task automation and business workflows."
+  title: "Telegram Bots — Arvexo",
+  description:
+    "Telegram Bots are an active Arvexo product direction for support, workflows, mini services and automation."
 };
 
 export default function TelegramBotsPage() {
-  const direction = getDirection("telegram-bots");
-
-  if (!direction) {
-    notFound();
-  }
-
-  return <DirectionPage direction={direction} />;
+  return (
+    <SimplePage
+      badge="Telegram Bots"
+      title="Automation products inside Telegram."
+      subtitle="Arvexo builds Telegram bots for support, notifications, workflows, mini services and everyday automation."
+      items={["Support bots", "Notifications", "Mini services", "Automation tools"]}
+      actionLabel="Discuss a bot"
+    />
+  );
 }

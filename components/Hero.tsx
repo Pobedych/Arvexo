@@ -1,34 +1,32 @@
 import { Button } from "@/components/Button";
-import { Icon } from "@/components/Icons";
-import { ProductPanel } from "@/components/ProductPanel";
-import { heroMetrics } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section className="home-hero">
-      <div className="hero-copy">
-        <p className="eyebrow">PRIVATE DIGITAL ECOSYSTEM</p>
-        <h1>Arvexo — privacy tools, family technology and future care R&D</h1>
+    <section className="hero-section" aria-labelledby="hero-title">
+      <div className="hero-stars" aria-hidden="true" />
+      <div className="hero-glow" aria-hidden="true" />
+
+      <div className="hero-content">
+        <p className="hero-badge">New</p>
+        <h1 id="hero-title">Building the AI ecosystem for digital privacy and family technology.</h1>
         <p>
-          VPN, Telegram Bots, Family Ecosystem and Care Robot R&D — one digital platform for privacy,
-          automation and future care technologies.
+          Arvexo connects VPN products, Telegram automation, Family Ecosystem and future Care Robot
+          R&D into one long-term technology platform.
         </p>
         <div className="hero-actions">
-          <Button href="/shop" className="px-6 py-3">
-            <Icon name="bag" className="h-5 w-5" />
-            Open Shop
+          <Button href="/shop" className="px-5 py-2.5" aria-label="Open Arvexo shop">
+            Open shop
           </Button>
-          <Button href="/contacts" variant="secondary" className="px-6 py-3">
-            Get in touch
+          <Button
+            href="#directions"
+            variant="secondary"
+            className="px-5 py-2.5"
+            aria-label="View Arvexo directions"
+          >
+            View directions
           </Button>
-        </div>
-        <div className="hero-metrics" aria-label="Arvexo ecosystem directions">
-          {heroMetrics.map((metric) => (
-            <span key={metric}>{metric}</span>
-          ))}
         </div>
       </div>
-      <ProductPanel variant="command" />
     </section>
   );
 }
