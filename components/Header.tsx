@@ -16,7 +16,7 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="header-bar">
-        <Link href="/" className="focus-ring rounded-md" onClick={closeMenu} aria-label="Arvexo home">
+        <Link href="/" className="focus-ring" onClick={closeMenu} aria-label="Arvexo home">
           <Logo />
         </Link>
 
@@ -33,8 +33,8 @@ export function Header() {
         </nav>
 
         <div className="desktop-cta">
-          <Button href="/contacts" className="header-cta px-5 py-2.5">
-            Get in touch
+          <Button href="/contacts" className="header-cta px-5 py-2.5" aria-label="Open contacts page">
+            Contacts
           </Button>
         </div>
 
@@ -63,9 +63,6 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Button href="/contacts" className="justify-center px-5 py-3" onClick={closeMenu}>
-              Get in touch
-            </Button>
           </nav>
         </div>
       )}

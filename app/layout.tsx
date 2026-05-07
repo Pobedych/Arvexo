@@ -5,13 +5,13 @@ import { Header } from "@/components/Header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Arvexo — VPN, Telegram Bots, Family Ecosystem and Care Robot R&D",
+  title: "Arvexo — AI Ecosystem for Digital Privacy and Family Technology",
   description:
-    "Arvexo is a digital ecosystem for privacy tools, Telegram automation, family technology and future Care Robot R&D.",
+    "Arvexo connects AI Shop products, Telegram automation, Family Ecosystem and future Robots R&D into one long-term technology platform.",
   openGraph: {
-    title: "Arvexo — VPN, Telegram Bots, Family Ecosystem and Care Robot R&D",
+    title: "Arvexo — AI Ecosystem for Digital Privacy and Family Technology",
     description:
-      "Arvexo is a digital ecosystem for privacy tools, Telegram automation, family technology and future Care Robot R&D.",
+      "Arvexo connects AI Shop products, Telegram automation, Family Ecosystem and future Robots R&D into one long-term technology platform.",
     type: "website"
   }
 };
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#191919"
+  themeColor: "#000000"
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

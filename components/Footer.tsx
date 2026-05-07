@@ -1,31 +1,26 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { emailUrl, footerProducts, navigation, telegramUrl } from "@/lib/content";
-import { Icon } from "@/components/Icons";
+import { Button } from "@/components/Button";
 import { Logo } from "@/components/Logo";
+import { footerCompany, footerDirections, footerProducts, footerSocials } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer id="contacts">
+    <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-brand">
           <Logo />
-          <p>
-            Digital ecosystem for privacy tools, Telegram automation, family technology and future care
-            research.
-          </p>
-          <div className="footer-socials">
-            <a href={telegramUrl} className="social-link" aria-label="Telegram" target="_blank" rel="noreferrer">
-              <Icon name="telegram" className="h-4 w-4" />
-            </a>
-            <a href={emailUrl} className="social-link" aria-label="Email">
-              <Icon name="mail" className="h-4 w-4" />
-            </a>
+          <p>Arvexo — AI ecosystem for digital products, family technology and future robotics R&D.</p>
+          <div className="footer-mini-cta">
+            <span>Questions, partnerships or product access?</span>
+            <Button href="/contacts" className="px-5 py-2.5" aria-label="Contact Arvexo">
+              Contact Arvexo
+            </Button>
           </div>
         </div>
 
-        <FooterColumn title="Navigation">
-          {navigation.map((item) => (
+        <FooterColumn title="Directions">
+          {footerDirections.map((item) => (
             <Link key={item.href} href={item.href} className="footer-link">
               {item.label}
             </Link>
@@ -34,19 +29,38 @@ export function Footer() {
 
         <FooterColumn title="Products">
           {footerProducts.map((item) => (
+            <Link key={`${item.href}-${item.label}`} href={item.href} className="footer-link">
+              {item.label}
+            </Link>
+          ))}
+        </FooterColumn>
+
+        <FooterColumn title="Company">
+          {footerCompany.map((item) => (
             <Link key={item.href} href={item.href} className="footer-link">
               {item.label}
             </Link>
           ))}
         </FooterColumn>
 
-        <FooterColumn title="Contacts">
-          <a href={telegramUrl} className="footer-link" target="_blank" rel="noreferrer">
-            Telegram
-          </a>
-          <a href={emailUrl} className="footer-link">
-            Email
-          </a>
+        <FooterColumn title="Socials">
+          {footerSocials.map((item) =>
+            item.href.startsWith("/") ? (
+              <Link key={item.label} href={item.href} className="footer-link">
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.label}
+                href={item.href}
+                className="footer-link"
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </FooterColumn>
       </div>
       <div className="footer-bottom">© 2026 Arvexo. All rights reserved.</div>
@@ -54,7 +68,7 @@ export function Footer() {
   );
 }
 
-function FooterColumn({ title, children }: { title: string; children: ReactNode }) {
+function FooterColumn({ children, title }: { children: ReactNode; title: string }) {
   return (
     <div className="footer-column">
       <h3>{title}</h3>

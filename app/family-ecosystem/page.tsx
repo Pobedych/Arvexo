@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { DirectionPage } from "@/components/DirectionPage";
-import { getDirection } from "@/lib/content";
+import { SimplePage } from "@/components/SimplePage";
 
 export const metadata: Metadata = {
-  title: "Arvexo Family Ecosystem — Shared Family Technology",
-  description: "Arvexo Family Ecosystem is the main startup direction for family profiles, AI assistants, shared services and secure family space."
+  title: "Family Ecosystem — Arvexo",
+  description:
+    "Family Ecosystem is Arvexo's core startup direction for profiles, AI assistant, shared tasks, reminders and secure family space."
 };
 
 export default function FamilyEcosystemPage() {
-  const direction = getDirection("family-ecosystem");
-
-  if (!direction) {
-    notFound();
-  }
-
-  return <DirectionPage direction={direction} />;
+  return (
+    <SimplePage
+      badge="Family Ecosystem"
+      title="A secure AI space for family life."
+      subtitle="Family Ecosystem focuses on family profiles, AI assistant, shared tasks, reminders, personal services and one protected digital space."
+      items={["Family profiles", "AI Assistant", "Shared tasks", "Secure space"]}
+      actionLabel="Get in touch"
+    />
+  );
 }
