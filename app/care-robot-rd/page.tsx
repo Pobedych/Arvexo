@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function CareRobotRdPage() {
+export default function EnglishCareRobotRdPage() {
   redirect("/robots-rd");
 }

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Contact Arvexo through Telegram or email for products, partnerships and collaboration."
 };
 
-export default function ContactsPage() {
+export default function EnglishContactsPage() {
   return (
     <SimplePage
       badge="Contacts"

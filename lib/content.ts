@@ -5,13 +5,13 @@ export const emailUrl = "mailto:arvexoai@gmail.com";
 export const githubUrl = "/contacts";
 
 export const navigation = [
-  { label: "Shop", href: "/shop" },
-  { label: "Family Ecosystem", href: "/family-ecosystem" },
+  { label: "Магазин", href: "/shop" },
+  { label: "Семейная экосистема", href: "/family-ecosystem" },
   { label: "Robots R&D", href: "/robots-rd" },
-  { label: "About", href: "/about" }
+  { label: "О нас", href: "/about" }
 ];
 
-export const mobileNavigation = [...navigation, { label: "Contacts", href: "/contacts" }];
+export const mobileNavigation = [...navigation, { label: "Контакты", href: "/contacts" }];
 
 export type StatusTone = "active" | "available" | "development" | "future" | "secure" | "muted";
 export type ProductPanelVariant =
@@ -56,6 +56,7 @@ export type RoadmapStep = {
   title: string;
   description: string;
   labels: string[];
+  visual: "shop" | "family" | "robot" | "platform";
 };
 
 export type Benefit = {
@@ -70,186 +71,190 @@ export type FAQItem = {
 };
 
 export const heroMetrics = [
-  "Privacy tools",
-  "Telegram automation",
-  "Family assistant",
+  "Инструменты приватности",
+  "Telegram-автоматизация",
+  "Семейный ассистент",
   "Robotics R&D"
 ];
 
 export const landingDirections: LandingDirection[] = [
   {
-    label: "Active Product",
+    label: "Активный продукт",
     title: "AI Shop",
     description:
-      "Digital products by Arvexo: VPN access, Telegram bots, AI subscriptions, mini apps and automation tools.",
-    tags: ["VPN", "Telegram bots", "Mini Apps", "AI Services"],
+      "Цифровые продукты Arvexo: VPN-доступ, Telegram-боты, AI-подписки, мини-приложения и инструменты автоматизации.",
+    tags: ["VPN", "Telegram-боты", "Мини-приложения", "AI-сервисы"],
     mockupTitle: "AI Shop",
     rows: [
-      { label: "VPN Access", status: "Available" },
-      { label: "Telegram Bots", status: "Available" },
-      { label: "Mini Apps", status: "In development" },
-      { label: "AI Services", status: "Planned" }
+      { label: "VPN-доступ", status: "Доступен" },
+      { label: "Telegram-боты", status: "Доступны" },
+      { label: "Мини-приложения", status: "В разработке" },
+      { label: "AI-сервисы", status: "Запланированы" }
     ]
   },
   {
-    label: "Core startup direction",
-    title: "Family Ecosystem",
+    label: "Основное startup-направление",
+    title: "Семейная экосистема",
     description:
-      "A family-focused digital ecosystem with profiles, AI assistant, shared tasks, reminders, personal services and one secure space for everyday life.",
-    tags: ["Family Chat", "Family Profiles", "Secure Space", "AI Assistant"],
-    mockupTitle: "Family Ecosystem",
+      "Семейная цифровая экосистема с профилями, AI-ассистентом, общими задачами, напоминаниями, персональными сервисами и безопасным пространством для повседневной жизни.",
+    tags: ["Семейный чат", "Профили", "Безопасное пространство", "AI-ассистент"],
+    mockupTitle: "Семейная экосистема",
     rows: [
-      { label: "Family profiles", status: "Synced" },
-      { label: "AI Assistant", status: "Ready" },
-      { label: "Shared tasks", status: "Today" },
-      { label: "Secure space", status: "Protected" }
+      { label: "Семейные профили", status: "Синхронизированы" },
+      { label: "AI-ассистент", status: "Готов" },
+      { label: "Общие задачи", status: "Сегодня" },
+      { label: "Безопасное пространство", status: "Защищено" }
     ]
   },
   {
-    label: "Future R&D",
+    label: "Будущее R&D",
     title: "Robots R&D",
     description:
-      "A future research direction focused on care robots, AI-powered devices and technologies that can support families in everyday life.",
-    tags: ["Care Robot", "AI devices", "Research Phase", "Future Technology"],
+      "Будущее исследовательское направление для care-роботов, AI-устройств и технологий, которые смогут поддерживать семьи в повседневной жизни.",
+    tags: ["Care Robot", "AI-устройства", "R&D", "Будущие технологии"],
     mockupTitle: "Robots R&D",
     rows: [
-      { label: "Care scenarios", status: "Research" },
-      { label: "AI behavior model", status: "Concept" },
-      { label: "Prototype planning", status: "Future" },
-      { label: "Device layer", status: "Exploration" }
+      { label: "Сценарии заботы", status: "Исследование" },
+      { label: "AI-модель поведения", status: "Концепт" },
+      { label: "Планирование прототипа", status: "Будущее" },
+      { label: "Уровень устройств", status: "Изучение" }
     ]
   }
 ];
 
 export const roadmapSteps: RoadmapStep[] = [
   {
-    step: "Step 1",
+    step: "Шаг 1",
     title: "AI Shop",
     description:
-      "Digital products by Arvexo: VPN access, Telegram bots, AI services and mini apps for real everyday tasks.",
-    labels: ["VPN Access", "Telegram Bots", "AI Services", "Mini Apps"]
+      "Цифровые продукты Arvexo: VPN-доступ, Telegram-боты, AI-сервисы и мини-приложения для реальных повседневных задач.",
+    labels: ["VPN-доступ", "Telegram-боты", "AI-сервисы", "Мини-приложения"],
+    visual: "shop"
   },
   {
-    step: "Step 2",
-    title: "Family Ecosystem",
+    step: "Шаг 2",
+    title: "Семейная экосистема",
     description:
-      "A family-focused platform with profiles, AI assistant, shared tasks, reminders and secure digital space.",
-    labels: ["Family profiles", "AI Assistant", "Shared tasks", "Secure space"]
+      "Семейная платформа с профилями, AI-ассистентом, общими задачами, напоминаниями и безопасным цифровым пространством.",
+    labels: ["Семейные профили", "AI-ассистент", "Общие задачи", "Безопасное пространство"],
+    visual: "family"
   },
   {
-    step: "Step 3",
+    step: "Шаг 3",
     title: "Robots R&D",
     description:
-      "A future research direction focused on care robots, AI-powered devices and technologies for family support.",
-    labels: ["Care scenarios", "AI devices", "Prototype planning", "Future R&D"]
+      "Будущее исследовательское направление для care-роботов, AI-устройств и технологий семейной поддержки.",
+    labels: ["Сценарии заботы", "AI-устройства", "Планирование прототипа", "Будущее R&D"],
+    visual: "robot"
   },
   {
-    step: "Step 4",
-    title: "Unified Platform",
+    step: "Шаг 4",
+    title: "Единая платформа",
     description:
-      "One Arvexo account, dashboard, subscriptions, connected services and future device integration.",
-    labels: ["Arvexo account", "Connected services", "Family dashboard", "Device integration"]
+      "Один аккаунт Arvexo, панель управления, подписки, подключенные сервисы и будущая интеграция устройств.",
+    labels: ["Аккаунт Arvexo", "Подключенные сервисы", "Семейная панель", "Интеграция устройств"],
+    visual: "platform"
   }
 ];
 
 export const visionFocus = [
-  "AI Shop - digital products, VPN, Telegram bots and AI services",
-  "Family Ecosystem - profiles, assistant, shared tasks and secure space",
-  "Robots R&D - future care robots, AI devices and family support technologies",
-  "Unified Platform - one account, dashboard and connected services"
+  "AI Shop — цифровые продукты, VPN, Telegram-боты и AI-сервисы",
+  "Семейная экосистема — профили, ассистент, общие задачи и безопасное пространство",
+  "Robots R&D — будущие care-роботы, AI-устройства и технологии семейной поддержки",
+  "Единая платформа — один аккаунт, панель управления и подключенные сервисы"
 ];
 
 export const benefits: Benefit[] = [
   {
     icon: "shield",
-    title: "Privacy-first",
+    title: "Privacy-first подход",
     description:
-      "Digital products and family services should be built around secure access and protected digital activity."
+      "Цифровые продукты и семейные сервисы должны строиться вокруг безопасного доступа и защищенной цифровой активности."
   },
   {
     icon: "bolt",
-    title: "AI automation",
+    title: "AI-автоматизация",
     description:
-      "Telegram bots, mini apps and assistant workflows help automate routine tasks and daily processes."
+      "Telegram-боты, мини-приложения и сценарии ассистента помогают автоматизировать рутинные задачи и ежедневные процессы."
   },
   {
     icon: "bag",
-    title: "Active products",
+    title: "Активные продукты",
     description:
-      "AI Shop gives Arvexo a practical commercial layer: VPN access, Telegram bots, AI services and mini apps."
+      "AI Shop дает Arvexo практический коммерческий слой: VPN-доступ, Telegram-боты, AI-сервисы и мини-приложения."
   },
   {
     icon: "network",
-    title: "Family-centered platform",
+    title: "Семейная платформа",
     description:
-      "Family Ecosystem focuses on profiles, shared tasks, reminders, personal services and AI assistance."
+      "Семейная экосистема фокусируется на профилях, общих задачах, напоминаниях, персональных сервисах и AI-помощи."
   },
   {
     icon: "flask",
-    title: "Future robotics vision",
+    title: "Будущее робототехники",
     description:
-      "Robots R&D explores care robots, AI-powered devices and technologies that can support families."
+      "Robots R&D исследует care-роботов, AI-устройства и технологии, которые смогут поддерживать семьи."
   },
   {
     icon: "apps",
-    title: "Long-term ecosystem",
+    title: "Долгосрочная экосистема",
     description:
-      "The goal is not one product, but a connected platform where services, family tools and future devices work together."
+      "Цель Arvexo — не один продукт, а связанная платформа, где сервисы, семейные инструменты и будущие устройства работают вместе."
   }
 ];
 
 export const faqItems: FAQItem[] = [
   {
-    question: "What is Arvexo?",
+    question: "Что такое Arvexo?",
     answer:
-      "Arvexo is a digital ecosystem that combines AI Shop, Family Ecosystem and future Robots R&D into one long-term technology platform."
+      "Arvexo — цифровая экосистема, которая объединяет AI Shop, Семейную экосистему и будущее направление Robots R&D в одну долгосрочную технологическую платформу."
   },
   {
-    question: "What is AI Shop?",
+    question: "Что такое AI Shop?",
     answer:
-      "AI Shop is the active product direction of Arvexo. It includes digital products such as VPN access, Telegram bots, AI services, mini apps and automation tools."
+      "AI Shop — активное продуктовое направление Arvexo. Оно включает цифровые продукты: VPN-доступ, Telegram-боты, AI-сервисы, мини-приложения и инструменты автоматизации."
   },
   {
-    question: "What is Family Ecosystem?",
+    question: "Что такое Семейная экосистема?",
     answer:
-      "Family Ecosystem is the core startup direction of Arvexo. It focuses on family profiles, AI assistant, shared tasks, reminders, personal services and one secure digital space for everyday life."
+      "Семейная экосистема — основное startup-направление Arvexo. Оно фокусируется на семейных профилях, AI-ассистенте, общих задачах, напоминаниях, персональных сервисах и одном безопасном цифровом пространстве для повседневной жизни."
   },
   {
-    question: "What is Robots R&D?",
+    question: "Что такое Robots R&D?",
     answer:
-      "Robots R&D is a future research direction focused on care robots, AI-powered devices and technologies that can support families. It is not presented as a finished product yet."
+      "Robots R&D — будущее исследовательское направление, связанное с care-роботами, AI-устройствами и технологиями семейной поддержки. Оно не представлено как готовый продукт."
   },
   {
-    question: "Is Arvexo already a finished platform?",
+    question: "Arvexo уже является готовой платформой?",
     answer:
-      "Not fully. Arvexo is developing in stages: active digital products first, then Family Ecosystem, then Robots R&D and a unified platform experience."
+      "Не полностью. Arvexo развивается поэтапно: сначала активные цифровые продукты, затем Семейная экосистема, после этого Robots R&D и единый платформенный опыт."
   },
   {
-    question: "How can I contact Arvexo?",
+    question: "Как связаться с Arvexo?",
     answer:
-      "You can contact Arvexo through Telegram or email to ask about products, partnerships, development or future collaboration."
+      "С Arvexo можно связаться через Telegram или email, чтобы обсудить продукты, партнерства, разработку или будущую коллаборацию."
   }
 ];
 
 export const footerDirections = [
   { label: "AI Shop", href: "/shop" },
-  { label: "Family Ecosystem", href: "/family-ecosystem" },
+  { label: "Семейная экосистема", href: "/family-ecosystem" },
   { label: "Robots R&D", href: "/robots-rd" }
 ];
 
 export const footerProducts = [
-  { label: "VPN Access", href: "/vpn" },
-  { label: "Telegram Bots", href: "/telegram-bots" },
-  { label: "AI Services", href: "/shop" },
-  { label: "Mini Apps", href: "/shop" }
+  { label: "VPN-доступ", href: "/vpn" },
+  { label: "Telegram-боты", href: "/telegram-bots" },
+  { label: "AI-сервисы", href: "/shop" },
+  { label: "Мини-приложения", href: "/shop" }
 ];
 
 export const footerCompany = [
-  { label: "About", href: "/about" },
-  { label: "Roadmap", href: "/#roadmap" },
-  { label: "Contacts", href: "/contacts" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms", href: "/terms" }
+  { label: "О нас", href: "/about" },
+  { label: "Дорожная карта", href: "/#roadmap" },
+  { label: "Контакты", href: "/contacts" },
+  { label: "Политика конфиденциальности", href: "/privacy-policy" },
+  { label: "Условия", href: "/terms" }
 ];
 
 export const footerSocials = [
@@ -260,239 +265,239 @@ export const footerSocials = [
 
 export const shopProducts = [
   {
-    name: "VPN Access",
-    description: "Private access and digital privacy direction.",
-    status: "Available",
+    name: "VPN-доступ",
+    description: "Приватный доступ и направление цифровой безопасности.",
+    status: "Доступен",
     tone: "available" as StatusTone,
     icon: "shield" as IconName
   },
   {
-    name: "Telegram Bots",
-    description: "Custom support, notification and automation bots.",
-    status: "Available",
+    name: "Telegram-боты",
+    description: "Боты для поддержки, уведомлений и автоматизации.",
+    status: "Доступны",
     tone: "available" as StatusTone,
     icon: "bot" as IconName
   },
   {
-    name: "AI Services",
-    description: "Applied AI services and workflow assistance.",
-    status: "Planned",
+    name: "AI-сервисы",
+    description: "Прикладные AI-сервисы и помощь в рабочих процессах.",
+    status: "Запланированы",
     tone: "future" as StatusTone,
     icon: "brain" as IconName
   },
   {
-    name: "Mini Apps",
-    description: "Compact product interfaces and automation tools.",
-    status: "In development",
+    name: "Мини-приложения",
+    description: "Компактные продуктовые интерфейсы и инструменты автоматизации.",
+    status: "В разработке",
     tone: "development" as StatusTone,
     icon: "apps" as IconName
   }
 ];
 
 export const robotRoadmap = [
-  "Care scenarios",
-  "AI behavior model",
-  "Prototype planning",
-  "Device layer",
-  "Family ecosystem integration"
+  "Сценарии заботы",
+  "AI-модель поведения",
+  "Планирование прототипа",
+  "Уровень устройств",
+  "Интеграция с семейной экосистемой"
 ];
 
 export const directions: Direction[] = [
   {
     slug: "vpn",
     href: "/vpn",
-    label: "VPN Access",
-    eyebrow: "AI SHOP PRODUCT",
-    title: "VPN access for private digital activity",
-    homeTitle: "VPN Access",
-    status: "Available",
+    label: "VPN-доступ",
+    eyebrow: "ПРОДУКТ AI SHOP",
+    title: "VPN-доступ для приватной цифровой активности",
+    homeTitle: "VPN-доступ",
+    status: "Доступен",
     tone: "available",
     icon: "shield",
     panel: "vpn",
-    intro: "Private access and protected connectivity inside the Arvexo AI Shop.",
+    intro: "Приватный доступ и защищенное подключение внутри Arvexo AI Shop.",
     description:
-      "VPN access is one of Arvexo's active products, built as the privacy layer for everyday digital activity.",
-    points: ["Secure access", "Private activity", "Stable connection", "AI Shop product"],
+      "VPN-доступ — один из активных продуктов Arvexo, который формирует слой приватности для повседневной цифровой активности.",
+    points: ["Безопасный доступ", "Приватная активность", "Стабильное подключение", "Продукт AI Shop"],
     features: [
       {
-        title: "Protected access",
-        description: "A practical product direction for private browsing and secure access."
+        title: "Защищенный доступ",
+        description: "Практическое продуктовое направление для приватного браузинга и безопасного доступа."
       },
       {
-        title: "Commercial layer",
-        description: "Part of the active AI Shop catalog rather than a future concept."
+        title: "Коммерческий слой",
+        description: "Часть активного каталога AI Shop, а не будущая концепция."
       },
       {
-        title: "Ecosystem fit",
-        description: "A privacy base that supports the wider Arvexo platform vision."
+        title: "Связь с экосистемой",
+        description: "База приватности, которая поддерживает долгосрочное видение платформы Arvexo."
       }
     ],
     benefits: [
       {
-        title: "Privacy-first usage",
-        description: "Digital access starts with clear privacy boundaries."
+        title: "Privacy-first использование",
+        description: "Цифровой доступ начинается с понятных границ приватности."
       },
       {
-        title: "Useful now",
-        description: "VPN access is an active Arvexo product direction."
+        title: "Полезно уже сейчас",
+        description: "VPN-доступ — активное продуктовое направление Arvexo."
       },
       {
-        title: "Platform foundation",
-        description: "Privacy tools strengthen the long-term Arvexo ecosystem."
+        title: "Фундамент платформы",
+        description: "Инструменты приватности усиливают долгосрочную экосистему Arvexo."
       }
     ],
-    cta: "View VPN Access"
+    cta: "Смотреть VPN-доступ"
   },
   {
     slug: "telegram-bots",
     href: "/telegram-bots",
-    label: "Telegram Bots",
-    eyebrow: "AI SHOP PRODUCT",
-    title: "Telegram bots for automation and mini services",
-    homeTitle: "Telegram Bots",
-    status: "Available",
+    label: "Telegram-боты",
+    eyebrow: "ПРОДУКТ AI SHOP",
+    title: "Telegram-боты для автоматизации и мини-сервисов",
+    homeTitle: "Telegram-боты",
+    status: "Доступны",
     tone: "available",
     icon: "bot",
     panel: "bots",
-    intro: "Telegram bots for support, notifications, workflows, mini apps and service automation.",
+    intro: "Telegram-боты для поддержки, уведомлений, рабочих процессов, мини-приложений и сервисной автоматизации.",
     description:
-      "Telegram bots are an active Arvexo product direction for automation, support flows, reminders and compact service experiences.",
-    points: ["Support bots", "Notifications", "Mini services", "Automation tools"],
+      "Telegram-боты — активное продуктовое направление Arvexo для автоматизации, поддержки, напоминаний и компактных сервисных сценариев.",
+    points: ["Боты поддержки", "Уведомления", "Мини-сервисы", "Инструменты автоматизации"],
     features: [
       {
-        title: "Bot workflows",
-        description: "Build useful flows for requests, reminders, forms and operational actions."
+        title: "Bot-сценарии",
+        description: "Полезные сценарии для заявок, напоминаний, форм и операционных действий."
       },
       {
-        title: "Telegram-native access",
-        description: "Launch automation in an interface people already use every day."
+        title: "Доступ внутри Telegram",
+        description: "Автоматизация запускается в интерфейсе, которым люди уже пользуются каждый день."
       },
       {
-        title: "Mini app path",
-        description: "Connect bot logic with compact product interfaces over time."
+        title: "Путь к мини-приложениям",
+        description: "Со временем bot-логику можно соединять с компактными продуктовыми интерфейсами."
       }
     ],
     benefits: [
       {
-        title: "Automate routines",
-        description: "Move repetitive steps into predictable Telegram workflows."
+        title: "Автоматизация рутины",
+        description: "Повторяющиеся шаги переходят в предсказуемые Telegram-сценарии."
       },
       {
-        title: "Fast product access",
-        description: "Deliver useful services without heavy onboarding."
+        title: "Быстрый доступ к продукту",
+        description: "Полезные сервисы можно запускать без сложного onboarding."
       },
       {
-        title: "Commercial foundation",
-        description: "Bots support the active AI Shop product layer."
+        title: "Коммерческая база",
+        description: "Боты поддерживают активный продуктовый слой AI Shop."
       }
     ],
-    cta: "View Telegram Bots"
+    cta: "Смотреть Telegram-боты"
   },
   {
     slug: "family-ecosystem",
     href: "/family-ecosystem",
-    label: "Family Ecosystem",
-    eyebrow: "CORE STARTUP DIRECTION",
-    title: "Family Ecosystem for everyday family technology",
-    homeTitle: "Family Ecosystem",
-    status: "Startup direction",
+    label: "Семейная экосистема",
+    eyebrow: "ОСНОВНОЕ STARTUP-НАПРАВЛЕНИЕ",
+    title: "Семейная экосистема для повседневных семейных технологий",
+    homeTitle: "Семейная экосистема",
+    status: "Startup-направление",
     tone: "development",
     icon: "network",
     panel: "family",
-    intro: "Family profiles, AI assistant, shared tasks, reminders and one secure digital space.",
+    intro: "Семейные профили, AI-ассистент, общие задачи, напоминания и одно безопасное цифровое пространство.",
     description:
-      "Family Ecosystem is Arvexo's core startup direction: a protected family platform for profiles, assistant workflows, shared tasks, reminders and personal services.",
-    points: ["Family profiles", "AI Assistant", "Shared tasks", "Secure space"],
+      "Семейная экосистема — основное startup-направление Arvexo: защищенная семейная платформа для профилей, сценариев ассистента, общих задач, напоминаний и персональных сервисов.",
+    points: ["Семейные профили", "AI-ассистент", "Общие задачи", "Безопасное пространство"],
     features: [
       {
-        title: "Family profiles",
-        description: "Profile spaces for roles, preferences, reminders and shared responsibilities."
+        title: "Семейные профили",
+        description: "Пространства профилей для ролей, предпочтений, напоминаний и общих обязанностей."
       },
       {
-        title: "AI assistant",
-        description: "Assistant workflows for coordination, reminders and everyday family actions."
+        title: "AI-ассистент",
+        description: "Сценарии ассистента для координации, напоминаний и повседневных семейных действий."
       },
       {
-        title: "Secure family space",
-        description: "A privacy-centered platform direction for sensitive family information."
+        title: "Безопасное семейное пространство",
+        description: "Privacy-centered направление платформы для чувствительной семейной информации."
       }
     ],
     benefits: [
       {
-        title: "One family dashboard",
-        description: "Bring shared services and tasks into a clear platform experience."
+        title: "Одна семейная панель",
+        description: "Общие сервисы и задачи собираются в понятный платформенный опыт."
       },
       {
-        title: "Assistant layer",
-        description: "Use AI to help coordinate everyday routines."
+        title: "Слой ассистента",
+        description: "AI помогает координировать повседневные семейные процессы."
       },
       {
-        title: "Future device path",
-        description: "Create a software base for long-term robotics R&D."
+        title: "Путь к будущим устройствам",
+        description: "Создает программную основу для долгосрочного robotics R&D."
       }
     ],
-    cta: "View Family Ecosystem"
+    cta: "Смотреть Семейную экосистему"
   },
   {
     slug: "robots-rd",
     href: "/robots-rd",
     label: "Robots R&D",
-    eyebrow: "FUTURE R&D",
-    title: "Robots R&D for future family support technologies",
+    eyebrow: "БУДУЩЕЕ R&D",
+    title: "Robots R&D для будущих технологий семейной поддержки",
     homeTitle: "Robots R&D",
-    status: "Research track",
+    status: "R&D-направление",
     tone: "future",
     icon: "flask",
     panel: "robot",
-    intro: "Future research into care robots, AI-powered devices and family support technologies.",
+    intro: "Будущие исследования care-роботов, AI-устройств и технологий семейной поддержки.",
     description:
-      "Robots R&D is a future Arvexo research direction, focused on care scenarios, AI behavior models, prototype planning and device concepts.",
-    points: ["Care scenarios", "AI devices", "Prototype planning", "Future R&D"],
+      "Robots R&D — будущее исследовательское направление Arvexo, сфокусированное на сценариях заботы, AI-моделях поведения, планировании прототипов и концептах устройств.",
+    points: ["Сценарии заботы", "AI-устройства", "Планирование прототипа", "Будущее R&D"],
     features: [
       {
-        title: "Research framing",
-        description: "Explore family support scenarios before presenting a finished product."
+        title: "Исследовательская рамка",
+        description: "Сначала изучаются сценарии семейной поддержки, а не презентуется готовый продукт."
       },
       {
-        title: "AI behavior models",
-        description: "Study assistant behavior that could support care-focused technology."
+        title: "AI-модели поведения",
+        description: "Исследуется поведение ассистента, которое может поддерживать care-технологии."
       },
       {
-        title: "Device concepts",
-        description: "Connect long-term hardware ideas with the Family Ecosystem software layer."
+        title: "Концепты устройств",
+        description: "Долгосрочные hardware-идеи связываются с программным слоем Семейной экосистемы."
       }
     ],
     benefits: [
       {
-        title: "Long-term vision",
-        description: "Keep a dedicated track for future care and device technologies."
+        title: "Долгосрочное видение",
+        description: "Отдельный трек для будущих care- и device-технологий."
       },
       {
-        title: "Honest product boundary",
-        description: "Present robotics as R&D, not as a finished commercial product."
+        title: "Честная граница продукта",
+        description: "Робототехника показывается как R&D, а не как готовый коммерческий продукт."
       },
       {
-        title: "Family support focus",
-        description: "Shape research around real family use cases and safe assistance."
+        title: "Фокус на семейной поддержке",
+        description: "Исследования строятся вокруг реальных семейных сценариев и безопасной помощи."
       }
     ],
-    cta: "View Robots R&D"
+    cta: "Смотреть Robots R&D"
   }
 ];
 
 export const contactCards = [
   {
     title: "Telegram",
-    description: "Contact Arvexo for product access, partnerships and quick collaboration questions.",
+    description: "Свяжитесь с Arvexo по вопросам доступа к продуктам, партнерств и быстрой коллаборации.",
     href: telegramUrl,
-    label: "Open Telegram",
+    label: "Открыть Telegram",
     icon: "telegram" as IconName
   },
   {
     title: "Email",
-    description: "Use email for structured requests, product details and longer collaboration notes.",
+    description: "Используйте email для структурированных запросов, деталей по продуктам и длинных предложений.",
     href: emailUrl,
-    label: "Send Email",
+    label: "Написать email",
     icon: "mail" as IconName
   }
 ];

@@ -17,7 +17,7 @@ type PageIntroProps = {
 
 export function PageIntro({
   actionHref = "/contacts",
-  actionLabel = "Get in touch",
+  actionLabel = "Связаться",
   direction,
   eyebrow,
   panel,
@@ -40,7 +40,7 @@ export function PageIntro({
             <Icon name="bolt" className="h-4 w-4" />
           </Button>
           <Button href="/" variant="secondary" className="px-6 py-3">
-            Back to Home
+            На главную
           </Button>
         </div>
       </div>

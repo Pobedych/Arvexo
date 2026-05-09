@@ -17,7 +17,7 @@ export function DirectionPage({ children, direction }: DirectionPageProps) {
     <>
       <PageIntro
         actionHref="/contacts"
-        actionLabel="Get in touch"
+        actionLabel="Связаться"
         direction={direction}
         eyebrow={direction.eyebrow}
         points={direction.points}
@@ -34,7 +34,7 @@ export function DirectionPage({ children, direction }: DirectionPageProps) {
             <span>{direction.label}</span>
             <StatusPill tone={direction.tone}>{direction.status}</StatusPill>
           </div>
-          <h2>What this direction is about</h2>
+          <h2>О чем это направление</h2>
           <p>{direction.description}</p>
           <DetailList items={direction.points} />
         </div>
@@ -43,8 +43,8 @@ export function DirectionPage({ children, direction }: DirectionPageProps) {
 
       <section className="content-grid-section">
         <div className="section-heading">
-          <p className="eyebrow">PRODUCT SCOPE</p>
-          <h2>Features and product focus</h2>
+          <p className="eyebrow">ОБЛАСТЬ ПРОДУКТА</p>
+          <h2>Функции и продуктовый фокус</h2>
         </div>
         <div className="large-card-grid">
           {direction.features.map((feature) => (
@@ -58,8 +58,8 @@ export function DirectionPage({ children, direction }: DirectionPageProps) {
 
       <section className="content-grid-section">
         <div className="section-heading">
-          <p className="eyebrow">WHY IT MATTERS</p>
-          <h2>Benefits for the ecosystem</h2>
+          <p className="eyebrow">ПОЧЕМУ ЭТО ВАЖНО</p>
+          <h2>Польза для экосистемы</h2>
         </div>
         <div className="large-card-grid">
           {direction.benefits.map((benefit) => (
@@ -74,8 +74,8 @@ export function DirectionPage({ children, direction }: DirectionPageProps) {
       {children}
 
       <CTASection
-        title={`Start with ${direction.label}`}
-        subtitle={`Talk to Arvexo about ${direction.label} and how it fits into the wider privacy, automation and family technology ecosystem.`}
+        title={`Начать с ${direction.label}`}
+        subtitle={`Обсудите с Arvexo направление ${direction.label} и его место в экосистеме приватности, автоматизации и семейных технологий.`}
       />
     </>
   );

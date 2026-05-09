@@ -6,13 +6,14 @@ export const metadata: Metadata = {
   description: "VPN Access is an active AI Shop product direction for private digital activity."
 };
 
-export default function VpnPage() {
+export default function EnglishVpnPage() {
   return (
     <SimplePage
       badge="VPN Access"
       title="Private access inside AI Shop."
       subtitle="VPN Access is one of Arvexo's active products for protected digital activity and secure connectivity."
       items={["Secure access", "Private activity", "Stable connection", "AI Shop product"]}
+      actionHref="/contacts"
       actionLabel="Request access"
     />
   );

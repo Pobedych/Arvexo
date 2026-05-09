@@ -7,13 +7,14 @@ export const metadata: Metadata = {
     "Telegram Bots are an active Arvexo product direction for support, workflows, mini services and automation."
 };
 
-export default function TelegramBotsPage() {
+export default function EnglishTelegramBotsPage() {
   return (
     <SimplePage
       badge="Telegram Bots"
       title="Automation products inside Telegram."
       subtitle="Arvexo builds Telegram bots for support, notifications, workflows, mini services and everyday automation."
       items={["Support bots", "Notifications", "Mini services", "Automation tools"]}
+      actionHref="/contacts"
       actionLabel="Discuss a bot"
     />
   );
