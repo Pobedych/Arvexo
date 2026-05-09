@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     description:
       "Arvexo connects AI Shop products, Telegram automation, Family Ecosystem and future Robots R&D into one long-term technology platform.",
     type: "website"
+  },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/images/arvexo-apple-icon.png"
   }
 };
 

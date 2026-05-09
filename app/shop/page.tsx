@@ -7,13 +7,14 @@ export const metadata: Metadata = {
     "AI Shop is the active Arvexo product direction for VPN access, Telegram bots, AI services, mini apps and automation tools."
 };
 
-export default function ShopPage() {
+export default function EnglishShopPage() {
   return (
     <SimplePage
       badge="AI Shop"
       title="Active digital products by Arvexo."
       subtitle="AI Shop includes VPN access, Telegram bots, AI services, mini apps and automation tools for real everyday tasks."
       items={["VPN Access", "Telegram Bots", "Mini Apps", "AI Services"]}
+      actionHref="/contacts"
       actionLabel="Contact Arvexo"
     />
   );
