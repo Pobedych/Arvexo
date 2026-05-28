@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
 import { SimplePage } from "@/components/SimplePage";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Telegram-боты — Arvexo",
-  description:
-    "Telegram-боты — активное продуктовое направление Arvexo для поддержки, рабочих процессов, мини-сервисов и автоматизации."
-};
+export const metadata = createPageMetadata("/telegram-bots", "ru");
 
 export default function TelegramBotsPage() {
   return (

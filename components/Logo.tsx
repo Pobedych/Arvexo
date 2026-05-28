@@ -16,14 +16,9 @@ export function Logo({ compact = false }: LogoProps) {
         height={480}
       />
       {!compact && (
-        <Image
-          src="/images/arvexo-wordmark.png"
-          alt=""
-          aria-hidden="true"
-          className="site-logo-wordmark"
-          width={728}
-          height={121}
-        />
+        <span className="site-logo-text" aria-hidden="true">
+          arvexo
+        </span>
       )}
     </span>
   );

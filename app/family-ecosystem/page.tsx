@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
 import { SimplePage } from "@/components/SimplePage";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Family Ecosystem — Arvexo",
-  description:
-    "Family Ecosystem is Arvexo's core startup direction for profiles, AI assistant, shared tasks, reminders and secure family space."
-};
+export const metadata = createPageMetadata("/family-ecosystem", "en");
 
 export default function EnglishFamilyEcosystemPage() {
   return (

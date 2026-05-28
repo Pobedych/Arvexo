@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
 import { SimplePage } from "@/components/SimplePage";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Политика конфиденциальности — Arvexo",
-  description: "Политика конфиденциальности Arvexo."
-};
+export const metadata = createPageMetadata("/privacy-policy", "ru");
 
 export default function PrivacyPolicyPage() {
   return (

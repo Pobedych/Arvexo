@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
 import { SimplePage } from "@/components/SimplePage";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Условия — Arvexo",
-  description: "Условия использования Arvexo."
-};
+export const metadata = createPageMetadata("/terms", "ru");
 
 export default function TermsPage() {
   return (

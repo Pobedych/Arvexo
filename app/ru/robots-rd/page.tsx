@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
 import { SimplePage } from "@/components/SimplePage";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Robots R&D — Arvexo",
-  description:
-    "Robots R&D — будущее исследовательское направление Arvexo для care-роботов, AI-устройств и технологий семейной поддержки."
-};
+export const metadata = createPageMetadata("/robots-rd", "ru");
 
 export default function RobotsRdPage() {
   return (

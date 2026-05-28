@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
 import { SimplePage } from "@/components/SimplePage";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "AI Shop — Arvexo",
-  description:
-    "AI Shop — активное продуктовое направление Arvexo для VPN-доступа, Telegram-ботов, AI-сервисов, мини-приложений и инструментов автоматизации."
-};
+export const metadata = createPageMetadata("/shop", "ru");
 
 export default function ShopPage() {
   return (

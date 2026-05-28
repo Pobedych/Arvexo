@@ -53,20 +53,24 @@ export const chromeContent = {
     mobileNavLabel: "Мобильная навигация",
     openMenu: "Открыть меню",
     closeMenu: "Закрыть меню",
-    contactsLabel: "Контакты",
-    contactsAria: "Открыть страницу контактов",
+    contactsLabel: "Войти",
+    contactsAria: "Открыть личный кабинет Arvexo",
     navigation: [
-      { label: "Магазин", href: "/shop" },
-      { label: "Семейная экосистема", href: "/family-ecosystem" },
-      { label: "Robots R&D", href: "/robots-rd" },
-      { label: "О нас", href: "/about" }
+      { label: "Продукты", href: "/shop" },
+      { label: "Для образования", href: "https://study.arvexo.ru" },
+      { label: "Для бизнеса", href: "/contacts" },
+      { label: "Партнерам", href: "/contacts" },
+      { label: "FAQ", href: "/#faq" }
     ],
-    mobileExtra: [{ label: "Контакты", href: "/contacts" }],
+    mobileExtra: [
+      { label: "Ранний доступ", href: "/register" },
+      { label: "Контакты", href: "/contacts" }
+    ],
     footerDescription:
-      "Arvexo — AI-экосистема для цифровых продуктов, семейных технологий и будущего robotics R&D.",
-    footerQuestion: "Вопросы, партнерства или доступ к продуктам?",
+      "Arvexo — молодая AI-экосистема для обучения, AI-инструментов, Telegram-ботов и автоматизации бизнес-процессов.",
+    footerQuestion: "Ранний доступ, партнерство или внедрение?",
     footerCta: "Связаться с Arvexo",
-    footerBottom: "© 2026 Arvexo. Все права защищены.",
+    footerBottom: "© 2026 Arvexo. MVP в разработке · запуск экосистемы в 2026.",
     footerColumns: {
       directions: "Направления",
       products: "Продукты",
@@ -74,19 +78,20 @@ export const chromeContent = {
       socials: "Соцсети"
     },
     footerDirections: [
-      { label: "AI Shop", href: "/shop" },
-      { label: "Семейная экосистема", href: "/family-ecosystem" },
-      { label: "Robots R&D", href: "/robots-rd" }
+      { label: "Продукты", href: "/shop" },
+      { label: "Для образования", href: "https://study.arvexo.ru" },
+      { label: "Для бизнеса", href: "/contacts" },
+      { label: "Партнерам", href: "/contacts" }
     ],
     footerProducts: [
-      { label: "VPN-доступ", href: "/vpn" },
-      { label: "Telegram-боты", href: "/telegram-bots" },
-      { label: "AI-сервисы", href: "/shop" },
-      { label: "Мини-приложения", href: "/shop" }
+      { label: "Arvexo Study", href: "https://study.arvexo.ru" },
+      { label: "AI Products", href: "/shop" },
+      { label: "AI Consulting", href: "/contacts" },
+      { label: "Telegram-боты", href: "/telegram-bots" }
     ],
     footerCompany: [
       { label: "О нас", href: "/about" },
-      { label: "Дорожная карта", href: "/#roadmap" },
+      { label: "FAQ", href: "/#faq" },
       { label: "Контакты", href: "/contacts" },
       { label: "Политика конфиденциальности", href: "/privacy-policy" },
       { label: "Условия", href: "/terms" }
@@ -98,20 +103,24 @@ export const chromeContent = {
     mobileNavLabel: "Mobile navigation",
     openMenu: "Open menu",
     closeMenu: "Close menu",
-    contactsLabel: "Contacts",
-    contactsAria: "Open contacts page",
+    contactsLabel: "Sign in",
+    contactsAria: "Open Arvexo account",
     navigation: [
-      { label: "Shop", href: "/shop" },
-      { label: "Family Ecosystem", href: "/family-ecosystem" },
-      { label: "Robots R&D", href: "/robots-rd" },
-      { label: "About", href: "/about" }
+      { label: "Products", href: "/shop" },
+      { label: "Education", href: "https://study.arvexo.ru" },
+      { label: "Business", href: "/contacts" },
+      { label: "Partners", href: "/contacts" },
+      { label: "FAQ", href: "/#faq" }
     ],
-    mobileExtra: [{ label: "Contacts", href: "/contacts" }],
+    mobileExtra: [
+      { label: "Early access", href: "/register" },
+      { label: "Contacts", href: "/contacts" }
+    ],
     footerDescription:
-      "Arvexo — AI ecosystem for digital products, family technology and future robotics R&D.",
-    footerQuestion: "Questions, partnerships or product access?",
+      "Arvexo is a young AI ecosystem for learning, AI tools, Telegram bots and business automation.",
+    footerQuestion: "Early access, partnership or implementation?",
     footerCta: "Contact Arvexo",
-    footerBottom: "© 2026 Arvexo. All rights reserved.",
+    footerBottom: "© 2026 Arvexo. MVP in development · ecosystem launch in 2026.",
     footerColumns: {
       directions: "Directions",
       products: "Products",
@@ -119,19 +128,20 @@ export const chromeContent = {
       socials: "Socials"
     },
     footerDirections: [
-      { label: "AI Shop", href: "/shop" },
-      { label: "Family Ecosystem", href: "/family-ecosystem" },
-      { label: "Robots R&D", href: "/robots-rd" }
+      { label: "Products", href: "/shop" },
+      { label: "Education", href: "https://study.arvexo.ru" },
+      { label: "Business", href: "/contacts" },
+      { label: "Partners", href: "/contacts" }
     ],
     footerProducts: [
-      { label: "VPN Access", href: "/vpn" },
-      { label: "Telegram Bots", href: "/telegram-bots" },
-      { label: "AI Services", href: "/shop" },
-      { label: "Mini Apps", href: "/shop" }
+      { label: "Arvexo Study", href: "https://study.arvexo.ru" },
+      { label: "AI Products", href: "/shop" },
+      { label: "AI Consulting", href: "/contacts" },
+      { label: "Telegram Bots", href: "/telegram-bots" }
     ],
     footerCompany: [
       { label: "About", href: "/about" },
-      { label: "Roadmap", href: "/#roadmap" },
+      { label: "FAQ", href: "/#faq" },
       { label: "Contacts", href: "/contacts" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms", href: "/terms" }

@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import { SimplePage } from "@/components/SimplePage";
 import { telegramUrl } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contacts — Arvexo",
-  description: "Contact Arvexo through Telegram or email for products, partnerships and collaboration."
-};
+export const metadata = createPageMetadata("/contacts", "en");
 
 export default function EnglishContactsPage() {
   return (

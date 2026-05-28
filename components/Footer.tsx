@@ -9,6 +9,10 @@ import { chromeContent, footerSocials, getLocaleFromPath, localizeHref } from "@
 
 export function Footer() {
   const pathname = usePathname();
+  if (pathname === "/" || pathname === "/ru") {
+    return null;
+  }
+
   const locale = getLocaleFromPath(pathname);
   const copy = chromeContent[locale];
 
@@ -28,7 +32,7 @@ export function Footer() {
 
         <FooterColumn title={copy.footerColumns.directions}>
           {copy.footerDirections.map((item) => (
-            <Link key={item.href} href={localizeHref(item.href, locale)} className="footer-link">
+            <Link key={`${item.label}-${item.href}`} href={localizeHref(item.href, locale)} className="footer-link">
               {item.label}
             </Link>
           ))}
@@ -44,7 +48,7 @@ export function Footer() {
 
         <FooterColumn title={copy.footerColumns.company}>
           {copy.footerCompany.map((item) => (
-            <Link key={item.href} href={localizeHref(item.href, locale)} className="footer-link">
+            <Link key={`${item.label}-${item.href}`} href={localizeHref(item.href, locale)} className="footer-link">
               {item.label}
             </Link>
           ))}

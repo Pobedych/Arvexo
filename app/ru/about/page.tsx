@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
 import { SimplePage } from "@/components/SimplePage";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "О нас — Arvexo",
-  description:
-    "Arvexo — AI-экосистема для активных цифровых продуктов, семейных технологий и будущего robotics R&D."
-};
+export const metadata = createPageMetadata("/about", "ru");
 
 export default function AboutPage() {
   return (

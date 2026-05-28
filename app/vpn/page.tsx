@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
 import { SimplePage } from "@/components/SimplePage";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "VPN Access — Arvexo",
-  description: "VPN Access is an active AI Shop product direction for private digital activity."
-};
+export const metadata = createPageMetadata("/vpn", "en");
 
 export default function EnglishVpnPage() {
   return (
