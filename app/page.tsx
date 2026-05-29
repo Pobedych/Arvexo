@@ -4,7 +4,7 @@ import { ArvexoLanding } from "@/components/ArvexoLanding";
 export const metadata: Metadata = {
   title: "Arvexo — AI-экосистема для обучения, бизнеса и автоматизации",
   description:
-    "Главная страница Arvexo: адаптивное обучение, AI-продукты, консалтинг, безопасность, партнерства и единая экосистема нейросетевых решений.",
+    "Arvexo запускает экосистему AI-продуктов: тренажёр ЕГЭ, AI-инструменты, Telegram-магазин, боты и внедрение нейросетей в бизнес-процессы.",
   alternates: {
     canonical: "https://arvexo.ru/"
   }

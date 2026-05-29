@@ -59,7 +59,7 @@ export const chromeContent = {
       { label: "Продукты", href: "/shop" },
       { label: "Для образования", href: "https://study.arvexo.ru" },
       { label: "Для бизнеса", href: "/contacts" },
-      { label: "Партнерам", href: "/contacts" },
+      { label: "Партнёрам", href: "/contacts" },
       { label: "FAQ", href: "/#faq" }
     ],
     mobileExtra: [
@@ -81,7 +81,7 @@ export const chromeContent = {
       { label: "Продукты", href: "/shop" },
       { label: "Для образования", href: "https://study.arvexo.ru" },
       { label: "Для бизнеса", href: "/contacts" },
-      { label: "Партнерам", href: "/contacts" }
+      { label: "Партнёрам", href: "/contacts" }
     ],
     footerProducts: [
       { label: "Arvexo Study", href: "https://study.arvexo.ru" },

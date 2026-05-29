@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type IconName =
   | "api"
@@ -30,11 +30,8 @@ const navItems = [
   ["Продукты", "#products"],
   ["Для образования", "#education"],
   ["Для бизнеса", "#business"],
-  ["Партнерам", "#partners"],
-  ["FAQ", "#faq"]
+  ["Партнёрам", "#partners"]
 ];
-
-const typingWords = ["обучения", "автоматизации", "анонимности"];
 
 const statusCards = [
   {
@@ -44,7 +41,7 @@ const statusCards = [
   },
   {
     title: "Ранний доступ",
-    text: "Собираем первых пользователей для тестирования AI-тренажера и продуктов.",
+    text: "Собираем первых пользователей для тестирования AI-тренажёра и продуктов.",
     icon: "users"
   },
   {
@@ -63,7 +60,7 @@ const directions = [
   {
     id: "education",
     title: "Arvexo Study",
-    subtitle: "AI-тренажер для ЕГЭ и ОГЭ",
+    subtitle: "AI-тренажёр для ЕГЭ и ОГЭ",
     text: "Адаптивные задания, подсказки, разбор ошибок и персональная траектория подготовки.",
     tags: ["ЕГЭ", "AI-подсказки", "Прогресс"],
     cta: "Подробнее",
@@ -72,11 +69,11 @@ const directions = [
   },
   {
     id: "ai-products",
-    title: "AI Products",
-    subtitle: "Готовые AI-инструменты",
-    text: "Каталог решений, подписок, Telegram-ботов и автоматизаций для личных и рабочих задач.",
-    tags: ["Bots", "GPT", "Automation"],
-    cta: "Смотреть решения",
+    title: "AI Products / Ai-shop",
+    subtitle: "Telegram-магазин AI-продуктов",
+    text: "Коммерческий Telegram-слой для AI-подписок, цифровых продуктов и access keys.",
+    tags: ["Telegram", "Digital", "Access"],
+    cta: "Открыть Ai-shop",
     href: "/ru/shop",
     icon: "cpu"
   },
@@ -86,9 +83,29 @@ const directions = [
     subtitle: "Внедрение ИИ в бизнес",
     text: "Помогаем компаниям находить рутину, автоматизировать процессы и внедрять AI в продажи, поддержку и обучение сотрудников.",
     tags: ["B2B", "CRM", "Support"],
-    cta: "Обсудить проект",
-    href: "/ru/contacts",
+    cta: "Перейти на ai.arvexo.ru",
+    href: "https://ai.arvexo.ru",
     icon: "trend"
+  },
+  {
+    id: "account",
+    title: "Arvexo Account",
+    subtitle: "Единый аккаунт экосистемы",
+    text: "Будущий центр входа, профиля, подписок, платежей, Telegram-связки и доступов.",
+    tags: ["SSO", "Profile", "Access"],
+    cta: "Статус Account",
+    href: "https://account.arvexo.ru",
+    icon: "lock"
+  },
+  {
+    id: "labs",
+    title: "Arvexo Labs / R&D",
+    subtitle: "Будущие направления",
+    text: "Privacy-инструменты, Family-Hub, робототехника и экспериментальные продукты без обещания готовности.",
+    tags: ["R&D", "Privacy", "Future"],
+    cta: "Посмотреть Labs",
+    href: "/ru/family-ecosystem",
+    icon: "code"
   }
 ] satisfies Array<{
   id: string;
@@ -103,23 +120,23 @@ const directions = [
 
 const productCards = [
   {
-    title: "LLM-инструменты",
-    text: "Генерация текстов, объяснения, суммаризация и поддержка пользователей.",
+    title: "AI-подписки и доступы",
+    text: "Аккуратная выдача цифровых доступов через Telegram shop без фейковых подписок.",
     icon: "chat"
   },
   {
-    title: "Визуальные модели",
-    text: "Инструменты для изображений, презентаций, креативов и прототипов.",
+    title: "Образовательный AI",
+    text: "Подсказки, разбор ошибок, адаптивные задания и прогресс для Study.",
     icon: "wave"
   },
   {
     title: "Telegram-боты",
-    text: "Боты для заявок, поддержки, уведомлений, обучения и внутренних процессов.",
+    text: "Боты для заявок, поддержки, уведомлений, обучения, магазина и внутренних процессов.",
     icon: "bot"
   },
   {
     title: "Бизнес-автоматизация",
-    text: "Интеграции с CRM, таблицами, почтой, базами знаний и API.",
+    text: "Интеграции с CRM, таблицами, почтой, базами знаний, API и внутренними регламентами.",
     icon: "nodes"
   }
 ] satisfies Array<{ title: string; text: string; icon: IconName }>;
@@ -150,7 +167,7 @@ const securityCards = [
 const partnerCards = [
   {
     title: "Для школ и преподавателей",
-    text: "White Label-тренажеры, классы, задания, статистика и AI-подсказки.",
+    text: "Классы, задания, статистика и AI-подсказки. White Label - только как будущий сценарий.",
     icon: "study"
   },
   {
@@ -174,7 +191,7 @@ const faqs = [
   {
     question: "Что будет первым продуктом?",
     answer:
-      "Первый фокус - образовательный AI-тренажер и инструменты для автоматизации. Дальше экосистема будет расширяться."
+      "Первый фокус - образовательный AI-тренажёр и инструменты для автоматизации. Дальше экосистема будет расширяться."
   },
   {
     question: "Arvexo - это один продукт или экосистема?",
@@ -200,52 +217,12 @@ const faqs = [
 
 export function ArvexoLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [typedWord, setTypedWord] = useState("");
-  const [typingPaused, setTypingPaused] = useState(false);
-
-  useEffect(() => {
-    let wordIndex = 0;
-    let letterIndex = 0;
-    let deleting = false;
-    let pauseUntil = 0;
-
-    const interval = window.setInterval(() => {
-      const now = Date.now();
-
-      if (pauseUntil > now) {
-        return;
-      }
-
-      const word = typingWords[wordIndex];
-
-      if (!deleting) {
-        letterIndex += 1;
-        setTypedWord(word.slice(0, letterIndex));
-
-        if (letterIndex === word.length) {
-          deleting = true;
-          pauseUntil = now + 5000;
-          setTypingPaused(true);
-        }
-
-        return;
-      }
-
-      setTypingPaused(false);
-      letterIndex -= 1;
-      setTypedWord(word.slice(0, Math.max(0, letterIndex)));
-
-      if (letterIndex === 0) {
-        deleting = false;
-        wordIndex = (wordIndex + 1) % typingWords.length;
-      }
-    }, 62);
-
-    return () => window.clearInterval(interval);
-  }, []);
 
   return (
     <div className="arx-page arx-page-refined">
+      <a className="arx-skip-link" href="#content">
+        Перейти к содержимому
+      </a>
       <div className="arx-soft-light arx-soft-light-left" aria-hidden="true" />
       <div className="arx-soft-light arx-soft-light-right" aria-hidden="true" />
 
@@ -260,16 +237,12 @@ export function ArvexoLanding() {
                 {label}
               </a>
             ))}
-            <Link href="/ru/register" onClick={() => setMenuOpen(false)} className="arx-mobile-login">
+            <Link href="https://account.arvexo.ru" onClick={() => setMenuOpen(false)} className="arx-mobile-login">
               Войти
             </Link>
           </nav>
         </div>
       )}
-
-      <div className="arx-notice">
-        Arvexo запускается в 2026 году: MVP готовится к раннему доступу.
-      </div>
 
       <header className="arx-header">
         <Link href="/" className="arx-brand" aria-label="Arvexo">
@@ -284,7 +257,7 @@ export function ArvexoLanding() {
           ))}
         </nav>
         <div className="arx-header-actions">
-          <Link href="/ru/register" className="arx-login">
+          <Link href="https://account.arvexo.ru" className="arx-login">
             Войти
           </Link>
           <button className="arx-menu-button" type="button" onClick={() => setMenuOpen(true)} aria-label="Открыть меню">
@@ -293,30 +266,24 @@ export function ArvexoLanding() {
         </div>
       </header>
 
-      <main className="arx-main">
+      <main className="arx-main" id="content">
         <section className="arx-hero arx-hero-refined">
           <div className="arx-hero-copy arx-hero-copy-refined">
             <p className="arx-kicker">Запуск экосистемы в 2026</p>
-            <h1 className="arx-hero-brand">ARVEXO</h1>
-            <p className="arx-hero-type">
-              AI-платформа для{" "}
-              <span className="arx-typed-word" aria-live="polite">
-                {typedWord || typingWords[0].slice(0, 1)}
-              </span>
-              <span className={`arx-typed-caret ${typingPaused ? "arx-typed-caret-paused" : ""}`} aria-hidden="true" />
-            </p>
+            <h1 className="arx-hero-brand">Arvexo - AI-экосистема для обучения, бизнеса и автоматизации</h1>
+            <p className="arx-hero-type">Запускаем продукты для обучения, бизнеса и автоматизации</p>
             <p className="arx-hero-subtitle">
-              Создаем экосистему продуктов: тренажер ЕГЭ, AI-инструменты, Telegram-боты и внедрение нейросетей в бизнес.
+              Создаём экосистему продуктов: тренажёр ЕГЭ, AI-инструменты, Telegram-магазин, боты и внедрение нейросетей в бизнес-процессы.
             </p>
             <div className="arx-hero-actions">
-              <Link href="/ru/register" className="arx-primary-cta">
+              <a href="#products" className="arx-secondary-cta">
+                Смотреть продукты
+              </a>
+              <Link href="https://account.arvexo.ru" className="arx-primary-cta">
                 Получить ранний доступ
               </Link>
-              <a href="#products" className="arx-secondary-cta">
-                Смотреть направления
-              </a>
             </div>
-            <p className="arx-trust-note">MVP в разработке · первые пользователи · privacy-first архитектура</p>
+            <p className="arx-trust-note">MVP в разработке · запуск в 2026 · единый аккаунт в планах</p>
           </div>
         </section>
 
@@ -348,10 +315,10 @@ function ProjectStatus() {
         ))}
       </div>
       <div className="arx-status-facts" aria-label="Краткие факты о проекте">
-        <span>2026 - запуск экосистемы</span>
-        <span>4 направления</span>
-        <span>MVP - в разработке</span>
-        <span>Early access - скоро</span>
+        <span>Запуск в 2026</span>
+        <span>Study, Consulting, Ai-shop</span>
+        <span>MVP в разработке</span>
+        <span>Account в планах</span>
       </div>
     </section>
   );
@@ -363,8 +330,8 @@ function Directions() {
       <SectionHeader
         titleId="products-title"
         label="Направления"
-        title="Основные направления Arvexo"
-        text="Экосистема развивается вокруг трех практических сценариев: обучение, готовые AI-инструменты и внедрение нейросетей в бизнес-процессы."
+        title="Продукты и направления Arvexo"
+        text="Экосистема развивается вокруг практических сценариев: обучение, бизнес-автоматизация, Telegram commerce, единый аккаунт и будущие R&D-направления."
       />
       <div className="arx-direction-grid">
         {directions.map((direction) => (
@@ -398,7 +365,7 @@ function ProductEcosystem() {
         titleId="ai-products-title"
         label="AI Products"
         title="AI-продукты внутри экосистемы"
-        text="Arvexo объединяет инструменты для учебы, автоматизации, контента и бизнес-процессов."
+        text="Arvexo объединяет инструменты для учёбы, автоматизации, Telegram commerce и внутренних бизнес-процессов."
       />
       <div className="arx-product-grid">
         {productCards.map((card) => (
@@ -406,8 +373,8 @@ function ProductEcosystem() {
         ))}
       </div>
       <div className="arx-integration-note">
-        <strong>Интеграции с популярными AI-сервисами</strong>
-        <p>OpenAI-compatible API, YandexGPT, GigaChat, open-source LLM и другие провайдеры могут подключаться как инфраструктурные интеграции.</p>
+        <strong>Интеграции без привязки к одному провайдеру</strong>
+        <p>OpenAI-compatible API, YandexGPT, GigaChat, open-source LLM и другие провайдеры рассматриваются как инфраструктурные интеграции, а не как маркетинговое обещание.</p>
       </div>
     </section>
   );
@@ -457,10 +424,10 @@ function Partnership() {
       </div>
       <div className="arx-section-actions">
         <Link href="/ru/contacts" className="arx-primary-cta">
-          Стать партнером
+          Обсудить партнёрство
         </Link>
         <Link href="/ru/contacts" className="arx-secondary-cta">
-          Обсудить внедрение
+          Получить ранний доступ
         </Link>
       </div>
     </section>
@@ -524,8 +491,8 @@ function DetailedFooter() {
           </p>
         </div>
         <div className="arx-footer-links">
-          <FooterColumn title="Продукты" links={[["Arvexo Study", "#education"], ["AI Products", "#products"], ["AI Consulting", "#business"]]} />
-          <FooterColumn title="Компания" links={[["Партнерам", "#partners"], ["FAQ", "#faq"], ["Контакты", "/ru/contacts"]]} />
+          <FooterColumn title="Продукты" links={[["Arvexo Study", "https://study.arvexo.ru"], ["Arvexo Consulting", "https://ai.arvexo.ru"], ["Ai-shop", "/ru/shop"], ["Arvexo Account", "https://account.arvexo.ru"]]} />
+          <FooterColumn title="Компания" links={[["Партнёрам", "#partners"], ["FAQ", "#faq"], ["Контакты", "/ru/contacts"]]} />
           <FooterColumn title="Документы" links={[["Условия", "/ru/terms"], ["Приватность", "/ru/privacy-policy"]]} />
         </div>
       </div>

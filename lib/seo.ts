@@ -3,9 +3,9 @@ import type { Locale } from "@/lib/i18n";
 
 export const SITE_URL = "https://arvexo.ru";
 export const SITE_NAME = "Arvexo";
-export const SITE_TITLE = "Arvexo — AI Ecosystem for Digital Privacy and Family Technology";
+export const SITE_TITLE = "Arvexo — AI-экосистема для обучения, бизнеса и автоматизации";
 export const SITE_DESCRIPTION =
-  "Arvexo connects AI Shop products, Telegram automation, Family Ecosystem and future Robots R&D into one long-term technology platform.";
+  "Arvexo запускает экосистему AI-продуктов: тренажёр ЕГЭ, AI-инструменты, Telegram-магазин, боты и внедрение нейросетей в бизнес-процессы.";
 export const SEO_IMAGE = "/images/arvexo-lockup.png";
 export const LAST_MODIFIED = new Date("2026-05-09T00:00:00.000Z");
 
@@ -83,9 +83,9 @@ export const routeSeo: Record<Locale, Record<BaseRoutePath, SeoCopy>> = {
   },
   ru: {
     "/": {
-      title: "Arvexo — AI-экосистема для цифровой приватности и семейных технологий",
+      title: "Arvexo — AI-экосистема для обучения, бизнеса и автоматизации",
       description:
-        "Arvexo объединяет продукты AI Shop, Telegram-автоматизацию, Семейную экосистему и будущее Robots R&D в одну технологическую платформу."
+        "Arvexo запускает экосистему AI-продуктов: тренажёр ЕГЭ, AI-инструменты, Telegram-магазин, боты и внедрение нейросетей в бизнес-процессы."
     },
     "/about": {
       title: "О нас — Arvexo",
@@ -105,7 +105,7 @@ export const routeSeo: Record<Locale, Record<BaseRoutePath, SeoCopy>> = {
     "/telegram-bots": {
       title: "Telegram-боты — Arvexo",
       description:
-        "Arvexo создает Telegram-ботов для поддержки, уведомлений, рабочих процессов, мини-сервисов и автоматизации."
+        "Arvexo создаёт Telegram-ботов для поддержки, уведомлений, рабочих процессов, мини-сервисов и автоматизации."
     },
     "/family-ecosystem": {
       title: "Семейная экосистема — Arvexo",
