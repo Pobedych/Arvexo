@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Logo } from "@/components/Logo";
 
 type IconName =
   | "api"
@@ -246,8 +246,7 @@ export function ArvexoLanding() {
 
       <header className="arx-header">
         <Link href="/" className="arx-brand" aria-label="Arvexo">
-          <Image src="/images/arvexo-mark.png" alt="" width={36} height={36} priority />
-          <span>arvexo</span>
+          <Logo />
         </Link>
         <nav className="arx-nav" aria-label="Основная навигация">
           {navItems.map(([label, href]) => (
@@ -483,8 +482,7 @@ function DetailedFooter() {
       <div className="arx-footer-inner">
         <div>
           <Link href="/" className="arx-brand arx-footer-brand" aria-label="Arvexo">
-            <Image src="/images/arvexo-mark.png" alt="" width={34} height={34} />
-            <span>arvexo</span>
+            <Logo />
           </Link>
           <p className="arx-footer-copy">
             Молодая AI-экосистема для обучения, автоматизации, Telegram-ботов и внедрения нейросетей в рабочие процессы.

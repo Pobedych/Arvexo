@@ -4255,6 +4255,11 @@ body::before {
   filter: drop-shadow(0 0 18px rgba(55, 214, 189, 0.18));
 }
 
+.arx-page-refined .arx-brand .site-logo-wordmark {
+  width: 126px;
+  filter: none;
+}
+
 .arx-page-refined .arx-nav {
   display: flex;
   align-items: center;
@@ -5026,8 +5031,13 @@ body::before {
 }
 
 @media (max-width: 540px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .arx-page-refined .arx-header {
-    width: 100%;
+    width: 100vw;
     min-height: 68px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.10);
     background:
@@ -5042,16 +5052,40 @@ body::before {
     backdrop-filter: blur(24px) saturate(150%);
   }
 
+  .arx-page-refined .arx-hero-refined,
+  .arx-page-refined .arx-section,
+  .arx-footer-refined .arx-footer-inner,
+  .arx-footer-refined .arx-footer-bottom {
+    width: calc(100vw - 28px);
+    max-width: calc(100vw - 28px);
+  }
+
   .arx-page-refined .arx-brand {
     font-size: 1.34rem;
   }
 
+  .arx-page-refined .arx-brand .site-logo-wordmark {
+    width: 116px;
+  }
+
   .arx-page-refined .arx-hero-copy-refined h1 {
-    font-size: 2.5rem;
+    max-width: 100%;
+    font-size: 1.96rem;
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .arx-page-refined .arx-hero-copy-refined .arx-hero-brand {
-    font-size: clamp(2.35rem, 12vw, 3.4rem);
+    font-size: clamp(1.92rem, 8.8vw, 2.36rem);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .arx-page-refined .arx-hero-copy-refined,
+  .arx-page-refined .arx-hero-copy-refined p {
+    max-width: 100%;
+    min-width: 0;
   }
 
   .arx-hero-type {
@@ -5071,6 +5105,7 @@ body::before {
 
   .arx-primary-cta,
   .arx-secondary-cta {
+    min-height: 48px;
     width: 100%;
   }
 
