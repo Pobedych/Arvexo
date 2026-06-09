@@ -58,53 +58,53 @@ const statusCards = [
 
 const directions = [
   {
-    id: "education",
-    title: "Arvexo Study",
-    subtitle: "AI-тренажёр для ЕГЭ и ОГЭ",
-    text: "Адаптивные задания, подсказки, разбор ошибок и персональная траектория подготовки.",
-    tags: ["ЕГЭ", "AI-подсказки", "Прогресс"],
-    cta: "Подробнее",
-    href: "https://study.arvexo.ru",
-    icon: "study"
+    id: "connect",
+    title: "Arvexo Connect",
+    subtitle: "Приватный доступ и подписки",
+    text: "VPN-сервис с личным кабинетом, оплатой подписок, управлением устройствами, инструкциями подключения и будущей связкой с единым аккаунтом Arvexo.",
+    tags: ["VPN", "Cabinet", "Subscriptions"],
+    cta: "Открыть Connect",
+    href: "/ru/vpn",
+    icon: "shield"
   },
   {
     id: "ai-products",
-    title: "AI Products / Ai-shop",
-    subtitle: "Telegram-магазин AI-продуктов",
-    text: "Коммерческий Telegram-слой для AI-подписок, цифровых продуктов и access keys.",
-    tags: ["Telegram", "Digital", "Access"],
-    cta: "Открыть Ai-shop",
+    title: "AI Products",
+    subtitle: "Каталог AI-инструментов",
+    text: "Цифровые AI-продукты, Telegram-магазин, access keys, подписки и готовые инструменты для пользователей, команд и бизнес-сценариев.",
+    tags: ["AI tools", "Telegram Shop", "Access keys"],
+    cta: "Смотреть продукты",
     href: "/ru/shop",
     icon: "cpu"
   },
   {
-    id: "business",
+    id: "study",
+    title: "Arvexo Study",
+    subtitle: "AI-образование и подготовка",
+    text: "Образовательная платформа с AI-подсказками, заданиями, разбором ошибок, прогрессом и персональной траекторией подготовки.",
+    tags: ["Education", "AI hints", "Progress"],
+    cta: "Открыть Study",
+    href: "https://study.arvexo.ru",
+    icon: "study"
+  },
+  {
+    id: "consulting",
     title: "AI Consulting",
-    subtitle: "Внедрение ИИ в бизнес",
-    text: "Помогаем компаниям находить рутину, автоматизировать процессы и внедрять AI в продажи, поддержку и обучение сотрудников.",
-    tags: ["B2B", "CRM", "Support"],
-    cta: "Перейти на ai.arvexo.ru",
-    href: "https://ai.arvexo.ru",
+    subtitle: "Внедрение AI в бизнес",
+    text: "Аудит процессов, автоматизация поддержки и продаж, внутренние AI-ассистенты, интеграции с CRM, таблицами, почтой и базами знаний.",
+    tags: ["B2B", "Automation", "Integrations"],
+    cta: "Обсудить внедрение",
+    href: "/ru/contacts",
     icon: "trend"
   },
   {
-    id: "account",
-    title: "Arvexo Account",
-    subtitle: "Единый аккаунт экосистемы",
-    text: "Будущий центр входа, профиля, подписок, платежей, Telegram-связки и доступов.",
-    tags: ["SSO", "Profile", "Access"],
-    cta: "Статус Account",
-    href: "https://account.arvexo.ru",
-    icon: "lock"
-  },
-  {
-    id: "labs",
-    title: "Arvexo Labs / R&D",
-    subtitle: "Будущие направления",
-    text: "Privacy-инструменты, Family-Hub, робототехника и экспериментальные продукты без обещания готовности.",
-    tags: ["R&D", "Privacy", "Future"],
-    cta: "Посмотреть Labs",
-    href: "/ru/family-ecosystem",
+    id: "robotics",
+    title: "Robotics R&D",
+    subtitle: "Исследовательское направление",
+    text: "Долгосрочные эксперименты в робототехнике, care-технологиях, семейных сценариях, privacy-инструментах и будущих физических AI-продуктах.",
+    tags: ["Robotics", "Care tech", "Research"],
+    cta: "Смотреть R&D",
+    href: "/ru/care-robot-rd",
     icon: "code"
   }
 ] satisfies Array<{
@@ -184,34 +184,44 @@ const partnerCards = [
 
 const faqs = [
   {
-    question: "Когда запустится Arvexo?",
+    question: "Что такое Arvexo?",
     answer:
-      "Первые продукты экосистемы планируются к запуску в 2026 году. Сейчас проект находится в стадии разработки и подготовки раннего доступа."
+      "Arvexo - это AI-экосистема из нескольких направлений: Connect, AI Products, Study, AI Consulting и Robotics R&D. Мы собираем продукты вокруг обучения, автоматизации, цифрового доступа и внедрения AI в рабочие процессы."
   },
   {
-    question: "Что будет первым продуктом?",
+    question: "Когда планируется запуск?",
     answer:
-      "Первый фокус - образовательный AI-тренажёр и инструменты для автоматизации. Дальше экосистема будет расширяться."
+      "Первые продукты планируются к запуску в 2026 году. Сейчас проект находится в стадии разработки, подготовки MVP и раннего доступа."
   },
   {
-    question: "Arvexo - это один продукт или экосистема?",
+    question: "Что входит в Arvexo Connect?",
     answer:
-      "Это экосистема направлений: обучение, AI-инструменты, автоматизация бизнеса, Telegram-боты и будущие R&D-проекты."
+      "Connect - это направление для приватного цифрового доступа, подписок, личного кабинета, управления устройствами и будущей связки с единым аккаунтом Arvexo."
   },
   {
-    question: "Можно ли использовать Arvexo для бизнеса?",
+    question: "Что такое AI Products?",
     answer:
-      "Да. Отдельное направление Arvexo Consulting помогает внедрять AI в поддержку, продажи, обучение сотрудников и рутинные процессы."
+      "AI Products - это каталог цифровых продуктов и инструментов: Telegram-магазин, access keys, подписки, AI-сервисы, боты и готовые решения для пользователей и команд."
   },
   {
-    question: "Будет ли личный кабинет?",
+    question: "Чем занимается Arvexo Study?",
     answer:
-      "Да. Планируется личный кабинет для пользователей, клиентов, преподавателей и сотрудников."
+      "Study - образовательное направление: AI-подсказки, задания, разбор ошибок, прогресс и персональная траектория подготовки."
   },
   {
-    question: "Можно ли стать ранним пользователем?",
+    question: "Можно ли внедрить Arvexo в бизнес?",
     answer:
-      "Да. На сайте есть кнопка для заявки на ранний доступ. Через нее можно оставить контакт и попасть в первую волну тестирования."
+      "Да. AI Consulting помогает разобрать процессы, подобрать сценарии автоматизации, собрать AI-ассистентов, ботов и интеграции с CRM, таблицами, почтой или базами знаний."
+  },
+  {
+    question: "Что такое Robotics R&D?",
+    answer:
+      "Это долгосрочное исследовательское направление Arvexo для экспериментов с робототехникой, care-технологиями, семейными сценариями и будущими физическими AI-продуктами."
+  },
+  {
+    question: "Как попасть в ранний доступ?",
+    answer:
+      "Оставьте заявку через кнопку раннего доступа или контакты на сайте. Мы будем подключать первых пользователей по мере готовности модулей и тестовых сценариев."
   }
 ];
 
@@ -265,7 +275,7 @@ export function ArvexoLanding() {
         </div>
       </header>
 
-      <main className="arx-main" id="content">
+      <div className="arx-main" id="content">
         <section className="arx-hero arx-hero-refined">
           <div className="arx-hero-copy arx-hero-copy-refined">
             <p className="arx-kicker">Запуск экосистемы в 2026</p>
@@ -292,7 +302,7 @@ export function ArvexoLanding() {
         <Security />
         <Partnership />
         <FAQ />
-      </main>
+      </div>
 
       <DetailedFooter />
     </div>
@@ -329,8 +339,8 @@ function Directions() {
       <SectionHeader
         titleId="products-title"
         label="Направления"
-        title="Продукты и направления Arvexo"
-        text="Экосистема развивается вокруг практических сценариев: обучение, бизнес-автоматизация, Telegram commerce, единый аккаунт и будущие R&D-направления."
+        title="Пять направлений экосистемы Arvexo"
+        text="Arvexo собирается вокруг конкретных продуктовых линий: Connect, AI Products, Study, AI Consulting и Robotics R&D."
       />
       <div className="arx-direction-grid">
         {directions.map((direction) => (
@@ -436,18 +446,13 @@ function Partnership() {
 function FAQ() {
   return (
     <section className="arx-section arx-faq-refined" id="faq" aria-labelledby="faq-title">
-      <SectionHeader titleId="faq-title" label="FAQ" title="Частые вопросы" text="Коротко о запуске, первых продуктах и том, как попасть в ранний доступ." />
-      <div>
-        {faqs.map((faq, index) => (
-          <details key={faq.question} open={index === 0}>
-            <summary>
-              <span>{faq.question}</span>
-              <i>
-                <InlineIcon name="plus" />
-              </i>
-            </summary>
+      <SectionHeader titleId="faq-title" label="FAQ" title="Частые вопросы" text="Коротко о направлениях, запуске, раннем доступе и документах Arvexo." />
+      <div className="arx-faq-grid">
+        {faqs.map((faq) => (
+          <article className="arx-faq-card" key={faq.question}>
+            <h3>{faq.question}</h3>
             <p>{faq.answer}</p>
-          </details>
+          </article>
         ))}
       </div>
     </section>
@@ -489,9 +494,27 @@ function DetailedFooter() {
           </p>
         </div>
         <div className="arx-footer-links">
-          <FooterColumn title="Продукты" links={[["Arvexo Study", "https://study.arvexo.ru"], ["Arvexo Consulting", "https://ai.arvexo.ru"], ["Ai-shop", "/ru/shop"], ["Arvexo Account", "https://account.arvexo.ru"]]} />
+          <FooterColumn
+            title="Продукты"
+            links={[
+              ["Arvexo Connect", "/ru/vpn"],
+              ["Arvexo Study", "https://study.arvexo.ru"],
+              ["AI Products", "/ru/shop"],
+              ["AI Consulting", "/ru/contacts"],
+              ["Arvexo Account", "https://account.arvexo.ru"]
+            ]}
+          />
           <FooterColumn title="Компания" links={[["Партнёрам", "#partners"], ["FAQ", "#faq"], ["Контакты", "/ru/contacts"]]} />
-          <FooterColumn title="Документы" links={[["Условия", "/ru/terms"], ["Приватность", "/ru/privacy-policy"]]} />
+          <FooterColumn
+            title="Документы"
+            links={[
+              ["Оферта", "/ru/offer"],
+              ["Пользовательское соглашение", "/ru/terms"],
+              ["Политика конфиденциальности", "/ru/privacy-policy"],
+              ["Возвраты", "/ru/refund-policy"],
+              ["Персональные данные", "/ru/personal-data-consent"]
+            ]}
+          />
         </div>
       </div>
       <div className="arx-footer-bottom">

@@ -243,6 +243,7 @@ export const footerDirections = [
 ];
 
 export const footerProducts = [
+  { label: "Arvexo Connect", href: "/vpn" },
   { label: "VPN-доступ", href: "/vpn" },
   { label: "Telegram-боты", href: "/telegram-bots" },
   { label: "AI-сервисы", href: "/shop" },
@@ -253,8 +254,11 @@ export const footerCompany = [
   { label: "О нас", href: "/about" },
   { label: "Дорожная карта", href: "/#roadmap" },
   { label: "Контакты", href: "/contacts" },
+  { label: "Оферта", href: "/offer" },
   { label: "Политика конфиденциальности", href: "/privacy-policy" },
-  { label: "Условия", href: "/terms" }
+  { label: "Пользовательское соглашение", href: "/terms" },
+  { label: "Возвраты", href: "/refund-policy" },
+  { label: "Персональные данные", href: "/personal-data-consent" }
 ];
 
 export const footerSocials = [

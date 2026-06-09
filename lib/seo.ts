@@ -18,6 +18,9 @@ export const routePaths = [
   "/family-ecosystem",
   "/robots-rd",
   "/contacts",
+  "/offer",
+  "/refund-policy",
+  "/personal-data-consent",
   "/privacy-policy",
   "/terms"
 ] as const;
@@ -71,14 +74,26 @@ export const routeSeo: Record<Locale, Record<BaseRoutePath, SeoCopy>> = {
       title: "Contacts — Arvexo",
       description: "Contact Arvexo through Telegram or email for products, partnerships, development and collaboration."
     },
+    "/offer": {
+      title: "Public Offer — Arvexo",
+      description: "Read the Arvexo public offer for early access, digital products, subscriptions and AI services."
+    },
+    "/refund-policy": {
+      title: "Refund Policy — Arvexo",
+      description: "Read the Arvexo refund policy for digital products, subscriptions, early access and services."
+    },
+    "/personal-data-consent": {
+      title: "Personal Data Consent — Arvexo",
+      description: "Read the Arvexo personal data processing consent for product access, communication and support."
+    },
     "/privacy-policy": {
       title: "Privacy Policy — Arvexo",
       description:
         "Read the Arvexo privacy policy for product access, digital services and privacy-first platform development."
     },
     "/terms": {
-      title: "Terms — Arvexo",
-      description: "Read Arvexo terms for AI Shop product access, subscriptions and future platform services."
+      title: "User Agreement — Arvexo",
+      description: "Read the Arvexo user agreement for website access, AI tools, digital products and future platform services."
     }
   },
   ru: {
@@ -121,14 +136,26 @@ export const routeSeo: Record<Locale, Record<BaseRoutePath, SeoCopy>> = {
       title: "Контакты — Arvexo",
       description: "Свяжитесь с Arvexo через Telegram или email по вопросам продуктов, партнерств, разработки и сотрудничества."
     },
+    "/offer": {
+      title: "Публичная оферта — Arvexo",
+      description: "Публичная оферта Arvexo для раннего доступа, цифровых продуктов, подписок и AI-сервисов."
+    },
+    "/refund-policy": {
+      title: "Политика возвратов — Arvexo",
+      description: "Политика возвратов Arvexo для цифровых продуктов, подписок, раннего доступа и сервисов."
+    },
+    "/personal-data-consent": {
+      title: "Согласие на обработку персональных данных — Arvexo",
+      description: "Согласие на обработку персональных данных Arvexo для доступа к продуктам, связи и поддержки."
+    },
     "/privacy-policy": {
       title: "Политика конфиденциальности — Arvexo",
       description:
         "Политика конфиденциальности Arvexo для доступа к продуктам, цифровых сервисов и privacy-first развития платформы."
     },
     "/terms": {
-      title: "Условия — Arvexo",
-      description: "Условия Arvexo для доступа к продуктам AI Shop, подписок и будущих платформенных сервисов."
+      title: "Пользовательское соглашение — Arvexo",
+      description: "Пользовательское соглашение Arvexo для сайта, AI-инструментов, цифровых продуктов и будущих сервисов."
     }
   }
 };
@@ -146,6 +173,9 @@ export const sitemapRoutes: Array<{
   { path: "/robots-rd", changeFrequency: "monthly", priority: 0.78 },
   { path: "/about", changeFrequency: "monthly", priority: 0.72 },
   { path: "/contacts", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/offer", changeFrequency: "yearly", priority: 0.35 },
+  { path: "/refund-policy", changeFrequency: "yearly", priority: 0.32 },
+  { path: "/personal-data-consent", changeFrequency: "yearly", priority: 0.32 },
   { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.35 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.35 }
 ];

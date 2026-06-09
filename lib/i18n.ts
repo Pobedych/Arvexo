@@ -56,11 +56,10 @@ export const chromeContent = {
     contactsLabel: "Войти",
     contactsAria: "Открыть личный кабинет Arvexo",
     navigation: [
-      { label: "Продукты", href: "/shop" },
-      { label: "Для образования", href: "https://study.arvexo.ru" },
-      { label: "Для бизнеса", href: "/contacts" },
-      { label: "Партнёрам", href: "/contacts" },
-      { label: "FAQ", href: "/#faq" }
+      { label: "Продукты", href: "/#products" },
+      { label: "Для образования", href: "/#education" },
+      { label: "Для бизнеса", href: "/#business" },
+      { label: "Партнёрам", href: "/#partners" }
     ],
     mobileExtra: [
       { label: "Ранний доступ", href: "/register" },
@@ -84,6 +83,7 @@ export const chromeContent = {
       { label: "Партнёрам", href: "/contacts" }
     ],
     footerProducts: [
+      { label: "Arvexo Connect", href: "/vpn" },
       { label: "Arvexo Study", href: "https://study.arvexo.ru" },
       { label: "AI Products", href: "/shop" },
       { label: "AI Consulting", href: "/contacts" },
@@ -93,8 +93,11 @@ export const chromeContent = {
       { label: "О нас", href: "/about" },
       { label: "FAQ", href: "/#faq" },
       { label: "Контакты", href: "/contacts" },
+      { label: "Оферта", href: "/offer" },
       { label: "Политика конфиденциальности", href: "/privacy-policy" },
-      { label: "Условия", href: "/terms" }
+      { label: "Пользовательское соглашение", href: "/terms" },
+      { label: "Возвраты", href: "/refund-policy" },
+      { label: "Персональные данные", href: "/personal-data-consent" }
     ]
   },
   en: {
@@ -106,11 +109,10 @@ export const chromeContent = {
     contactsLabel: "Sign in",
     contactsAria: "Open Arvexo account",
     navigation: [
-      { label: "Products", href: "/shop" },
-      { label: "Education", href: "https://study.arvexo.ru" },
-      { label: "Business", href: "/contacts" },
-      { label: "Partners", href: "/contacts" },
-      { label: "FAQ", href: "/#faq" }
+      { label: "Products", href: "/#products" },
+      { label: "Education", href: "/#education" },
+      { label: "Business", href: "/#business" },
+      { label: "Partners", href: "/#partners" }
     ],
     mobileExtra: [
       { label: "Early access", href: "/register" },
@@ -134,6 +136,7 @@ export const chromeContent = {
       { label: "Partners", href: "/contacts" }
     ],
     footerProducts: [
+      { label: "Arvexo Connect", href: "/vpn" },
       { label: "Arvexo Study", href: "https://study.arvexo.ru" },
       { label: "AI Products", href: "/shop" },
       { label: "AI Consulting", href: "/contacts" },
@@ -143,8 +146,11 @@ export const chromeContent = {
       { label: "About", href: "/about" },
       { label: "FAQ", href: "/#faq" },
       { label: "Contacts", href: "/contacts" },
+      { label: "Public Offer", href: "/offer" },
       { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms", href: "/terms" }
+      { label: "User Agreement", href: "/terms" },
+      { label: "Refund Policy", href: "/refund-policy" },
+      { label: "Personal Data Consent", href: "/personal-data-consent" }
     ]
   }
 } as const;

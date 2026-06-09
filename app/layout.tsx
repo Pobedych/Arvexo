@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { ScrollAnimator } from "@/components/ScrollAnimator";
 import { SEO_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL, structuredData } from "@/lib/seo";
 import "./globals.css";
 
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         <Header />
         <main>{children}</main>
         <Footer />
+        <ScrollAnimator />
       </body>
     </html>
   );
