@@ -1,53 +1,36 @@
-# Arvexo Auth Uses Arvexo Study
+# Arvexo Account Auth
 
-The main Arvexo site uses the same FastAPI authentication backend and user
-database as `Arvexo-Study`.
+Registration and sign-in are handled by Arvexo Account, not by the main
+Arvexo marketing site.
 
-Next.js exposes same-origin proxy routes:
+Main site behavior:
+
+- Header "Sign in" / "Войти" links to `https://account.arvexo.ru`.
+- `/register` redirects to `https://account.arvexo.ru`.
+- `/ru/register` redirects to `https://account.arvexo.ru`.
+
+The Next.js API auth proxy is kept only as an optional compatibility layer for
+same-origin requests if Arvexo Account exposes an API backend.
+
+Proxy routes:
 
 - `POST /api/auth/register`
 - `POST /api/auth/login`
 - `POST /api/auth/logout`
 - `GET /api/auth/me`
 
-Set the Arvexo Study API base URL:
+Preferred Account API variable:
+
+```env
+ARVEXO_ACCOUNT_API_URL=http://127.0.0.1:8001
+```
+
+Legacy fallback still supported:
 
 ```env
 FASTAPI_AUTH_URL=http://127.0.0.1:8001
 ```
 
-Without this variable, the proxy uses `http://127.0.0.1:8001`, which matches
-the local `Arvexo-Study/docker-compose.yml` backend port.
-
-In production, point `FASTAPI_AUTH_URL` to the real Study backend URL. If this
-Next.js app runs inside Docker, do not use container-local `127.0.0.1` unless
-the Study backend is in the same container.
-
-The proxy forwards requests to FastAPI:
-
-- `POST /auth/register`
-- `POST /auth/login`
-- `POST /auth/logout`
-- `GET /auth/me`
-
-Expected JSON payloads:
-
-```json
-{
-  "name": "Alex",
-  "email": "alex@example.com",
-  "password": "strong-password"
-}
-```
-
-```json
-{
-  "email": "alex@example.com",
-  "password": "strong-password"
-}
-```
-
-Arvexo Study sets the `arvexo_study_session` HttpOnly cookie. Next.js forwards
-the `Set-Cookie` header back to the browser, so the account/session is shared
-between the main site and Arvexo Study when they are served on the same host or
-properly configured domain.
+Production should point auth flows to the real Arvexo Account service. The main
+site should not become the source of truth for users, sessions, subscriptions or
+account data.

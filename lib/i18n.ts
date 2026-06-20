@@ -57,12 +57,11 @@ export const chromeContent = {
     contactsAria: "Открыть личный кабинет Arvexo",
     navigation: [
       { label: "Продукты", href: "/#products" },
-      { label: "Для образования", href: "/#education" },
       { label: "Для бизнеса", href: "/#business" },
-      { label: "Партнёрам", href: "/#partners" }
+      { label: "FAQ", href: "/#faq" }
     ],
     mobileExtra: [
-      { label: "Ранний доступ", href: "/register" },
+      { label: "Ранний доступ", href: "https://account.arvexo.ru" },
       { label: "Контакты", href: "/contacts" }
     ],
     footerDescription:
@@ -78,13 +77,11 @@ export const chromeContent = {
     },
     footerDirections: [
       { label: "Продукты", href: "/shop" },
-      { label: "Для образования", href: "https://study.arvexo.ru" },
       { label: "Для бизнеса", href: "/contacts" },
       { label: "Партнёрам", href: "/contacts" }
     ],
     footerProducts: [
       { label: "Arvexo Connect", href: "/vpn" },
-      { label: "Arvexo Study", href: "https://study.arvexo.ru" },
       { label: "AI Products", href: "/shop" },
       { label: "AI Consulting", href: "/contacts" },
       { label: "Telegram-боты", href: "/telegram-bots" }
@@ -110,12 +107,11 @@ export const chromeContent = {
     contactsAria: "Open Arvexo account",
     navigation: [
       { label: "Products", href: "/#products" },
-      { label: "Education", href: "/#education" },
       { label: "Business", href: "/#business" },
-      { label: "Partners", href: "/#partners" }
+      { label: "FAQ", href: "/#faq" }
     ],
     mobileExtra: [
-      { label: "Early access", href: "/register" },
+      { label: "Early access", href: "https://account.arvexo.ru" },
       { label: "Contacts", href: "/contacts" }
     ],
     footerDescription:
@@ -131,13 +127,11 @@ export const chromeContent = {
     },
     footerDirections: [
       { label: "Products", href: "/shop" },
-      { label: "Education", href: "https://study.arvexo.ru" },
       { label: "Business", href: "/contacts" },
       { label: "Partners", href: "/contacts" }
     ],
     footerProducts: [
       { label: "Arvexo Connect", href: "/vpn" },
-      { label: "Arvexo Study", href: "https://study.arvexo.ru" },
       { label: "AI Products", href: "/shop" },
       { label: "AI Consulting", href: "/contacts" },
       { label: "Telegram Bots", href: "/telegram-bots" }

@@ -1,10 +1,33 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { Cormorant, JetBrains_Mono, Onest } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ScrollAnimator } from "@/components/ScrollAnimator";
 import { SEO_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL, structuredData } from "@/lib/seo";
 import "./globals.css";
+
+const onest = Onest({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-onest",
+  display: "swap"
+});
+
+const cormorant = Cormorant({
+  subsets: ["latin", "cyrillic"],
+  weight: ["500", "600"],
+  style: ["italic"],
+  variable: "--font-cormorant",
+  display: "swap"
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -46,13 +69,20 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#040d1b"
+  themeColor: "#EEEBE3"
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
-      <body>
+    <html
+      lang="ru"
+      className={`${onest.variable} ${cormorant.variable} ${jetbrainsMono.variable}`}
+    >
+      <body
+        style={{
+          fontFamily: "var(--font-onest), ui-sans-serif, system-ui, -apple-system, sans-serif"
+        }}
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

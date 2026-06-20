@@ -17,6 +17,7 @@ export const routePaths = [
   "/telegram-bots",
   "/family-ecosystem",
   "/robots-rd",
+  "/care-robot-rd",
   "/contacts",
   "/offer",
   "/refund-policy",
@@ -69,6 +70,11 @@ export const routeSeo: Record<Locale, Record<BaseRoutePath, SeoCopy>> = {
       title: "Robots R&D — Arvexo",
       description:
         "Robots R&D is Arvexo's future research direction for care robots, AI-powered devices and family support technologies."
+    },
+    "/care-robot-rd": {
+      title: "Care Robot R&D — Arvexo",
+      description:
+        "Arvexo Robotics R&D explores care technology, assistive robotics and future physical AI products. Long-term research direction."
     },
     "/contacts": {
       title: "Contacts — Arvexo",
@@ -131,6 +137,11 @@ export const routeSeo: Record<Locale, Record<BaseRoutePath, SeoCopy>> = {
       title: "Robots R&D — Arvexo",
       description:
         "Robots R&D — будущее исследовательское направление Arvexo для care-роботов, AI-устройств и технологий семейной поддержки."
+    },
+    "/care-robot-rd": {
+      title: "Care Robot R&D — Arvexo",
+      description:
+        "Arvexo Robotics R&D исследует care-технологии, вспомогательную робототехнику и будущие физические AI-продукты."
     },
     "/contacts": {
       title: "Контакты — Arvexo",

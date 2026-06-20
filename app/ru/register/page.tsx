@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { AuthForm } from "@/components/AuthForm";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Регистрация — Arvexo",
-  description: "Создайте аккаунт Arvexo или войдите через FastAPI auth proxy.",
+  title: "Аккаунт — Arvexo",
+  description: "Регистрация и вход находятся в Arvexo Account.",
   robots: {
     follow: false,
     index: false
@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function RuRegisterPage() {
-  return <AuthForm locale="ru" />;
+  redirect("https://account.arvexo.ru");
 }

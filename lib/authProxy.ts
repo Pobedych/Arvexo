@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const DEFAULT_STUDY_AUTH_URL = "http://127.0.0.1:8001";
+const DEFAULT_ACCOUNT_AUTH_URL = "http://127.0.0.1:8001";
 
 type AuthProxyMethod = "GET" | "POST";
 
 function getFastApiUrl(endpoint: string) {
-  const baseUrl = process.env.FASTAPI_AUTH_URL ?? DEFAULT_STUDY_AUTH_URL;
+  const baseUrl = process.env.ARVEXO_ACCOUNT_API_URL ?? process.env.FASTAPI_AUTH_URL ?? DEFAULT_ACCOUNT_AUTH_URL;
   const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
   const normalizedEndpoint = endpoint.startsWith("/") ? endpoint.slice(1) : endpoint;
 
@@ -60,7 +60,7 @@ export async function proxyAuthRequest(request: NextRequest, endpoint: string, m
     return NextResponse.json(
       {
         detail:
-          "Arvexo Study authentication service is unavailable. Start Arvexo-Study backend or set FASTAPI_AUTH_URL to the Study API URL."
+          "Arvexo Account authentication service is unavailable. Start Arvexo Account backend or set ARVEXO_ACCOUNT_API_URL to the Account API URL."
       },
       { status: 503 }
     );
