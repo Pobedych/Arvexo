@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Icon } from "@/components/Icons";
 import { Logo } from "@/components/Logo";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { chromeContent, getLocaleFromPath, localizeHref, stripLocale } from "@/lib/i18n";
 
 export function Header() {
@@ -72,6 +73,7 @@ export function Header() {
         </nav>
 
         <div className="arx-header-actions">
+          <LanguageSwitcher />
           <Link href="https://account.arvexo.ru" className="arx-login" aria-label={copy.contactsAria}>
             {copy.contactsLabel}
           </Link>

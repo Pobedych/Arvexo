@@ -4,6 +4,7 @@ import { Cormorant, JetBrains_Mono, Onest } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ScrollAnimator } from "@/components/ScrollAnimator";
+import { LangProvider } from "@/context/LangContext";
 import { SEO_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL, structuredData } from "@/lib/seo";
 import "./globals.css";
 
@@ -87,9 +88,11 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <LangProvider defaultLang="en">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </LangProvider>
         <ScrollAnimator />
       </body>
     </html>

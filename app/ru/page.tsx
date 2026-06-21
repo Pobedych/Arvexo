@@ -4,5 +4,5 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata("/", "ru");
 
 export default function Home() {
-  return <ArvexoLanding />;
+  return <ArvexoLanding defaultLang="ru" />;
 }
