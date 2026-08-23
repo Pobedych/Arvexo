@@ -115,19 +115,6 @@ function EcosystemLandingInner({ defaultLang }: { defaultLang: EcosystemLocale }
         </section>
       </div>
 
-      <footer className="eco-footer">
-        <Logo />
-        <p>{c.footer}</p>
-        <nav aria-label={locale === "ru" ? "Ссылки в подвале" : "Footer links"}>
-          <Link href={localize("/founder", locale)}>{c.footerFounder}</Link>
-          <Link href={localize("/contacts", locale)}>{c.footerContacts}</Link>
-          <a href="https://github.com/Pobedych" target="_blank" rel="noreferrer">GitHub</a>
-        </nav>
-        <div className="eco-footer-meta">
-          <LanguageSwitcher />
-          <span>© 2026 Arvexo</span>
-        </div>
-      </footer>
     </div>
   );
 }
