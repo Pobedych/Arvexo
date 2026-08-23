@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { headers } from "next/headers";
 import { Cormorant, JetBrains_Mono, Onest } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -45,8 +46,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: SEO_IMAGE,
-        width: 767,
-        height: 682,
+        width: 1200,
+        height: 630,
         alt: "Arvexo AI ecosystem"
       }
     ]
@@ -73,10 +74,13 @@ export const viewport: Viewport = {
   themeColor: "#EEEBE3"
 };
 
-export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  const requestHeaders = await headers();
+  const lang = requestHeaders.get("x-locale") === "ru" ? "ru" : "en";
+
   return (
     <html
-      lang="ru"
+      lang={lang}
       className={`${onest.variable} ${cormorant.variable} ${jetbrainsMono.variable}`}
     >
       <body

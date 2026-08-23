@@ -73,7 +73,6 @@ export function Header() {
         </nav>
 
         <div className="arx-header-actions">
-          <LanguageSwitcher />
           <Link href={localizeHref("/contacts", locale)} className="arx-login" aria-label={copy.contactsAria}>
             {copy.contactsLabel}
           </Link>

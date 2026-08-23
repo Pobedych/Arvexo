@@ -1,5 +1,0 @@
-import {Easing, interpolate, useCurrentFrame, useVideoConfig} from "remotion";
-export const reveal=(frame:number,start=0)=>({opacity:interpolate(frame,[start,start+18],[0,1],{extrapolateLeft:"clamp",extrapolateRight:"clamp",easing:Easing.bezier(.16,1,.3,1)}),translate:interpolate(frame,[start,start+24],["0px 34px","0px 0px"],{extrapolateLeft:"clamp",extrapolateRight:"clamp",easing:Easing.bezier(.16,1,.3,1)})});
-export const Brand=()=> <div className="brand"><span className="brand-dot">A</span>Arvexo Radar</div>;
-export const SceneTitle=({eyebrow,title,copy}:{eyebrow:string;title:string;copy:string})=>{const frame=useCurrentFrame();return <><div style={reveal(frame,0)} className="eyebrow">{eyebrow}</div><h1 style={reveal(frame,8)} className="headline">{title}</h1><p style={reveal(frame,18)} className="subhead">{copy}</p></>};
-export const Counter=({to,suffix=""}:{to:number;suffix?:string})=>{const frame=useCurrentFrame();const {fps}=useVideoConfig();const n=Math.round(interpolate(frame,[.3*fps,1.7*fps],[0,to],{extrapolateLeft:"clamp",extrapolateRight:"clamp",easing:Easing.bezier(.16,1,.3,1)}));return <>{new Intl.NumberFormat("ru-RU").format(n)}{suffix}</>};

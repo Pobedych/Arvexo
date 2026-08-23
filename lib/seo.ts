@@ -5,7 +5,7 @@ export const SITE_URL = "https://arvexo.ru";
 export const SITE_NAME = "Arvexo";
 export const SITE_TITLE = "Arvexo — AI Products, Research and Consulting";
 export const SITE_DESCRIPTION = "Arvexo builds Arvexo Radar and Arvexo AI Arena, conducts independent AI research and helps teams create effective AI systems.";
-export const SEO_IMAGE = "/images/arvexo-lockup.png";
+export const SEO_IMAGE = "/images/arvexo-og.png";
 export const LAST_MODIFIED = new Date("2026-08-22T00:00:00.000Z");
 
 export const routePaths = [
@@ -90,7 +90,7 @@ export function createPageMetadata(path: BaseRoutePath, locale: Locale): Metadat
   return {
     title: copy.title, description: copy.description,
     alternates: { canonical: url, languages: languageAlternates(path) },
-    openGraph: { title: copy.title, description: copy.description, url, siteName: SITE_NAME, type: "website", locale: locale === "ru" ? "ru_RU" : "en_US", alternateLocale: locale === "ru" ? ["en_US"] : ["ru_RU"], images: [{ url: absoluteUrl(SEO_IMAGE), width: 767, height: 682, alt: "Arvexo" }] },
+    openGraph: { title: copy.title, description: copy.description, url, siteName: SITE_NAME, type: "website", locale: locale === "ru" ? "ru_RU" : "en_US", alternateLocale: locale === "ru" ? ["en_US"] : ["ru_RU"], images: [{ url: absoluteUrl(SEO_IMAGE), width: 1200, height: 630, alt: "Arvexo" }] },
     twitter: { card: "summary_large_image", title: copy.title, description: copy.description, images: [absoluteUrl(SEO_IMAGE)] },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } }
   };

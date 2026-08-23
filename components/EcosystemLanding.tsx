@@ -37,7 +37,6 @@ function EcosystemLandingInner({ defaultLang }: { defaultLang: EcosystemLocale }
           {c.navigation.map(([label, path]) => <Link key={path} href={localize(path, locale)}>{label}</Link>)}
         </nav>
         <div className="eco-actions">
-          <LanguageSwitcher />
           <a className="eco-contact" href="mailto:arvexoai@gmail.com">{c.contact}<Arrow /></a>
           <button type="button" className="eco-menu" aria-label={c.menu} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
             <span className="eco-menu-label">{c.menu}</span>
@@ -124,7 +123,10 @@ function EcosystemLandingInner({ defaultLang }: { defaultLang: EcosystemLocale }
           <Link href={localize("/contacts", locale)}>{c.footerContacts}</Link>
           <a href="https://github.com/Pobedych" target="_blank" rel="noreferrer">GitHub</a>
         </nav>
-        <span>© 2026 Arvexo</span>
+        <div className="eco-footer-meta">
+          <LanguageSwitcher />
+          <span>© 2026 Arvexo</span>
+        </div>
       </footer>
     </div>
   );

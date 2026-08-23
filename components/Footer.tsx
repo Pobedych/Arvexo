@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { Button } from "@/components/Button";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Logo } from "@/components/Logo";
 import { chromeContent, footerSocials, getLocaleFromPath, localizeHref } from "@/lib/i18n";
 
@@ -74,7 +75,10 @@ export function Footer() {
           )}
         </FooterColumn>
       </div>
-      <div className="footer-bottom">{copy.footerBottom}</div>
+      <div className="footer-bottom">
+        <span>{copy.footerBottom}</span>
+        <LanguageSwitcher />
+      </div>
     </footer>
   );
 }

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap');
+
 /* ============================================================
    ARVEXO DESIGN SYSTEM — brand.md
    Light editorial · warm cream · vermilion accent
@@ -10,7 +12,7 @@
 /* ── 1. Variables ─────────────────────────────────────────── */
 
 :root {
-  --bg:          #EEEBE3;
+  --bg:          #F6F4EE;
   --surface:     #FBFAF7;
   --surface-alt: #E6E2D8;
   --ink:         #14130F;
@@ -19,13 +21,116 @@
   --faint:       #8A857B;
   --hairline:    rgba(20,19,15,.10);
   --hairline-md: rgba(20,19,15,.14);
-  --accent:      #E5402C;
+  --accent:      #5CA959;
   --success:     #1FB46A;
   --white:       #FFFFFF;
   --page-max:    1280px;
   --pad-x:       36px;
   --section-y:   120px;
   --radius-card: 18px;
+}
+
+/* Arena-inspired project index */
+.arx-live-projects {
+  width: min(calc(100% - var(--pad-x) * 2), var(--page-max));
+  margin: 0 auto;
+  padding: 48px 0 132px;
+}
+
+.arx-live-projects-head {
+  display: grid;
+  grid-template-columns: minmax(160px, .35fr) minmax(0, 1fr);
+  align-items: end;
+  gap: 32px;
+  margin-bottom: 52px;
+}
+
+.arx-live-projects-head > p {
+  margin: 0 0 9px;
+  color: var(--faint);
+  font-family: var(--font-mono, monospace);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.arx-live-projects-head h2 {
+  max-width: 880px;
+  margin: 0;
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+
+.arx-live-projects-head h2 em {
+  color: var(--accent);
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+}
+
+.arx-live-project-list { border-top: 1px solid var(--hairline-md); }
+
+.arx-live-project {
+  position: relative;
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) auto 28px;
+  align-items: center;
+  gap: 24px;
+  min-height: 142px;
+  border-bottom: 1px solid var(--hairline);
+  padding: 24px 18px 24px 0;
+  transition: background .25s ease, transform .3s cubic-bezier(.16,1,.3,1);
+}
+
+.arx-live-project::before {
+  content: '';
+  position: absolute;
+  inset: 18px auto 18px 0;
+  width: 2px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform .3s cubic-bezier(.16,1,.3,1);
+}
+
+.arx-live-project:hover,
+.arx-live-project:focus-visible {
+  background: rgba(255,255,255,.7);
+  transform: translateX(10px);
+}
+
+.arx-live-project:hover::before,
+.arx-live-project:focus-visible::before { transform: scaleY(1); }
+.arx-live-project-index { color: var(--faint); font-size: .72rem; }
+.arx-live-project h3 { margin: 0; font-size: clamp(1.45rem, 2.5vw, 2.2rem); font-weight: 500; letter-spacing: -.035em; }
+.arx-live-project p { max-width: 620px; margin: 7px 0 0; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+.arx-live-project-status { color: #377236; font-size: .76rem; font-weight: 600; }
+.arx-live-project-arrow { color: var(--faint); font-size: 1.15rem; transition: transform .25s ease, color .25s ease; }
+.arx-live-project:hover .arx-live-project-arrow { color: var(--accent); transform: translate(3px,-3px); }
+
+.arx-account-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 28px;
+  border-radius: 24px;
+  background: #E8F1E5;
+  padding: 34px 38px;
+}
+.arx-account-callout small { display: block; margin-bottom: 8px; color: #377236; font-size: .72rem; font-weight: 600; }
+.arx-account-callout strong { font-size: clamp(1.15rem, 2vw, 1.55rem); font-weight: 500; letter-spacing: -.025em; }
+.arx-account-callout b { flex: 0 0 auto; color: #377236; font-size: .82rem; font-weight: 600; }
+
+@media (max-width: 720px) {
+  .arx-live-projects { padding: 28px 0 92px; }
+  .arx-live-projects-head { grid-template-columns: 1fr; gap: 12px; }
+  .arx-live-project { grid-template-columns: 34px minmax(0,1fr) 22px; gap: 14px; min-height: 128px; padding-right: 4px; }
+  .arx-live-project-status { display: none; }
+  .arx-live-project p { font-size: .82rem; }
+  .arx-account-callout { align-items: flex-start; flex-direction: column; padding: 26px; }
 }
 
 /* ── 2. Reset & Base ──────────────────────────────────────── */
@@ -44,7 +149,7 @@ body {
   overflow-x: hidden;
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-onest, 'Onest'), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Manrope', var(--font-onest, 'Onest'), ui-sans-serif, system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -75,7 +180,7 @@ section, footer { scroll-margin-top: 80px; }
 }
 
 .serif-italic {
-  font-family: var(--font-cormorant, 'Cormorant'), 'Georgia', serif;
+  font-family: 'Fraunces', var(--font-cormorant, 'Cormorant'), 'Georgia', serif;
   font-style: italic;
 }
 
@@ -547,7 +652,7 @@ select:focus-visible {
 }
 
 .arx-hero-brand em {
-  font-family: var(--font-cormorant, 'Cormorant'), 'Georgia', serif;
+  font-family: 'Fraunces', var(--font-cormorant, 'Cormorant'), 'Georgia', serif;
   font-style: italic;
   font-weight: 600;
   color: var(--accent);
@@ -625,7 +730,7 @@ select:focus-visible {
 }
 
 .arx-section-head-refined h2 em {
-  font-family: var(--font-cormorant, 'Cormorant'), 'Georgia', serif;
+  font-family: 'Fraunces', var(--font-cormorant, 'Cormorant'), 'Georgia', serif;
   font-style: italic;
   font-weight: 600;
   color: var(--accent);
@@ -1397,10 +1502,15 @@ select:focus-visible {
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.06);
   padding: 16px var(--pad-x);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
   font-size: .82rem;
   color: rgba(255,255,255,.4);
 }
+
+.footer-bottom .lang-switcher { background: rgba(255,255,255,.08); }
 
 /* Footer primary-button override (white on dark) */
 .site-footer .primary-button,
@@ -1755,6 +1865,8 @@ select:focus-visible {
 .eco-footer .site-logo-wordmark { filter: brightness(0) invert(1); }
 .eco-footer > nav { display: flex; flex-wrap: wrap; gap: 22px; }
 .eco-footer a { color: rgba(255,255,255,.72); }
+.eco-footer-meta { display: flex; align-items: center; justify-self: end; gap: 16px; }
+.eco-footer-meta .lang-switcher { background: rgba(255,255,255,.08); }
 
 .eco-mobile-nav { position: fixed; z-index: 50; inset: 0; display: flex; flex-direction: column; background: #111a25; padding: 28px; color: white; }
 .eco-mobile-nav > button { align-self: end; border: 0; background: transparent; color: white; font-size: 2.4rem; }
@@ -1787,7 +1899,7 @@ select:focus-visible {
   .eco-hero, .eco-thesis, .eco-projects, .eco-capabilities, .eco-founder { width: min(calc(100% - 48px), 1440px); }
   .eco-project, .eco-project-arena { grid-template-columns: 1fr 1fr; }
   .eco-footer { grid-template-columns: 1fr 1fr; }
-  .eco-footer > span { justify-self: end; }
+  .eco-footer-meta { justify-self: end; }
 }
 
 @media (max-width: 820px) {
@@ -1811,7 +1923,7 @@ select:focus-visible {
   .eco-capability-grid h2 { margin-top: 60px; }
   .eco-closing { padding-top: 90px; padding-bottom: 90px; }
   .eco-footer { grid-template-columns: 1fr; }
-  .eco-footer > span { justify-self: start; }
+  .eco-footer-meta { justify-self: start; }
   .eco-footer > nav { display: grid; gap: 13px; }
   .focus-page { padding-top: 142px; }
   .focus-hero { min-height: 0; }

@@ -8,7 +8,7 @@ export function Logo({ compact = false }: LogoProps) {
   return (
     <span className={compact ? "site-logo site-logo-compact" : "site-logo"} aria-label="Arvexo">
       <Image
-        src="/images/arvexo-mark-v4.png"
+        src="/images/arvexo-mark-v5.png"
         alt=""
         aria-hidden="true"
         className="site-logo-mark"
