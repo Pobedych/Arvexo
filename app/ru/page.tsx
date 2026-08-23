@@ -1,8 +1,8 @@
-import { ArvexoLanding } from "@/components/ArvexoLanding";
+import { EcosystemLanding } from "@/components/EcosystemLanding";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata("/", "ru");
 
 export default function Home() {
-  return <ArvexoLanding defaultLang="ru" />;
+  return <EcosystemLanding defaultLang="ru" />;
 }

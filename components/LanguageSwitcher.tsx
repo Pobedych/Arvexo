@@ -8,13 +8,9 @@ export function LanguageSwitcher() {
   const { lang, setLang } = useLang();
   const pathname = usePathname();
   const router = useRouter();
+  const activeLang: Lang = pathname === "/ru" || pathname.startsWith("/ru/") ? "ru" : lang;
 
   function handleSelect(l: Lang) {
-    if (l === "zh") {
-      setLang("zh");
-      return;
-    }
-
     setLang(l);
 
     const base = stripLocale(pathname);
@@ -30,27 +26,19 @@ export function LanguageSwitcher() {
     <div className="lang-switcher" role="group" aria-label="Language">
       <button
         type="button"
-        className={lang !== "ru" && lang !== "zh" ? "lang-active" : ""}
+        className={activeLang === "en" ? "lang-active" : ""}
         onClick={() => handleSelect("en")}
-        aria-pressed={lang === "en"}
+        aria-pressed={activeLang === "en"}
       >
         EN
       </button>
       <button
         type="button"
-        className={lang === "ru" ? "lang-active" : ""}
+        className={activeLang === "ru" ? "lang-active" : ""}
         onClick={() => handleSelect("ru")}
-        aria-pressed={lang === "ru"}
+        aria-pressed={activeLang === "ru"}
       >
         RU
-      </button>
-      <button
-        type="button"
-        className={lang === "zh" ? "lang-active" : ""}
-        onClick={() => handleSelect("zh")}
-        aria-pressed={lang === "zh"}
-      >
-        ZH
       </button>
     </div>
   );

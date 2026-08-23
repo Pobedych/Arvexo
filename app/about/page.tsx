@@ -7,16 +7,16 @@ export default function AboutPage() {
   return (
     <InnerPage
       badge="About"
-      title={<>Building an <em style={{ fontFamily: "var(--font-cormorant,'Cormorant')", fontStyle: "italic", color: "var(--accent)", fontWeight: 600 }}>honest</em> AI ecosystem.</>}
-      subtitle="Arvexo is an early-stage AI ecosystem built around real tools: a smart VPN, an AI products catalogue, Telegram bots and AI consulting for businesses. No fake metrics, no inflated claims."
+      title={<>Building AI systems for <em style={{ fontStyle: "normal", color: "#2154d8", fontWeight: 650 }}>measurable progress.</em></>}
+      subtitle="Arvexo is an independent AI studio founded by Alexey Doborin. We build focused products, conduct applied research and help teams turn AI experiments into working systems."
       features={[
-        { title: "Arvexo Connect", text: "Smart VPN with user cabinet, subscription management and unified Arvexo account." },
-        { title: "AI Products", text: "Telegram shop with digital AI products, access keys, subscriptions and automation tools." },
-        { title: "AI Consulting", text: "Business automation: CRM integrations, AI assistants, bots and process design." },
-        { title: "Robotics R&D", text: "Long-term research direction into robotics, care tech and future physical AI products." }
+        { title: "Arvexo Radar", text: "Enterprise AI effectiveness and knowledge platform for visibility, business value and scalable practices." },
+        { title: "Arvexo AI Arena", text: "Learning and competition platform for skills, challenging tasks, projects and verified progress." },
+        { title: "Independent Research", text: "Applied work on AI effectiveness, knowledge systems and human-centered AI products." },
+        { title: "AI Consulting", text: "Strategy, process audit, rapid prototyping, integration and effectiveness measurement." }
       ]}
-      ctaPrimary={{ label: "View products", href: "/shop" }}
-      ctaSecondary={{ label: "Contact us", href: "/contacts" }}
+      ctaPrimary={{ label: "View Arvexo Radar", href: "/radar" }}
+      ctaSecondary={{ label: "Meet the founder", href: "/founder" }}
     />
   );
 }

@@ -26,14 +26,14 @@ function ArvexoLandingInner({ defaultLang }: { defaultLang: LandingLang }) {
   const { lang } = useLang();
   const effectiveLang = lang as LandingLang;
   const c = landingContent[effectiveLang] ?? landingContent[defaultLang];
-  const isRu = defaultLang === "ru" && lang !== "zh";
+  const isRu = defaultLang === "ru";
 
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="arx-page arx-page-refined">
       <a className="arx-skip-link" href="#content">
-        {lang === "zh" ? "跳转到内容" : lang === "ru" ? "Перейти к содержимому" : "Skip to content"}
+        {lang === "ru" ? "Перейти к содержимому" : "Skip to content"}
       </a>
       <div className="arx-soft-light arx-soft-light-left" aria-hidden="true" />
       <div className="arx-soft-light arx-soft-light-right" aria-hidden="true" />
@@ -53,6 +53,7 @@ function ArvexoLandingInner({ defaultLang }: { defaultLang: LandingLang }) {
               {c.loginLabel}
             </Link>
           </nav>
+          <LanguageSwitcher />
         </div>
       )}
 
@@ -82,7 +83,7 @@ function ArvexoLandingInner({ defaultLang }: { defaultLang: LandingLang }) {
             <p className="arx-kicker">{c.hero.kicker}</p>
             <h1 className="arx-hero-brand">
               {c.hero.h1Line1}<br />
-              {lang === "zh" ? null : "и "}<em>{c.hero.h1Accent}</em>
+              {lang === "ru" ? "и " : "and "}<em>{c.hero.h1Accent}</em>
             </h1>
             <p className="arx-hero-type">{c.hero.type}</p>
             <p className="arx-hero-subtitle">{c.hero.subtitle}</p>

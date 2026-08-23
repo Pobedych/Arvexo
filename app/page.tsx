@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
-import { ArvexoLanding } from "@/components/ArvexoLanding";
+import { EcosystemLanding } from "@/components/EcosystemLanding";
 
 export const metadata: Metadata = {
-  title: "Arvexo — AI-экосистема для обучения, бизнеса и автоматизации",
-  description:
-    "Arvexo запускает экосистему AI-продуктов: тренажёр ЕГЭ, AI-инструменты, Telegram-магазин, боты и внедрение нейросетей в бизнес-процессы.",
+  title: "Arvexo — AI Products, Research and Consulting",
+  description: "Arvexo builds Arvexo Radar and Arvexo AI Arena, conducts independent AI research and helps teams create effective AI systems.",
   alternates: {
     canonical: "https://arvexo.ru/"
   }
 };
 
 export default function Home() {
-  return <ArvexoLanding defaultLang="en" />;
+  return <EcosystemLanding defaultLang="en" />;
 }
