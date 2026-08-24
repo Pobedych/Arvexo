@@ -6,7 +6,11 @@ type LogoProps = {
 
 export function Logo({ compact = false }: LogoProps) {
   return (
-    <span className={compact ? "site-logo site-logo-compact" : "site-logo"} aria-label="Arvexo">
+    <span
+      className={compact ? "site-logo site-logo-compact" : "site-logo"}
+      role="img"
+      aria-label="Arvexo"
+    >
       <Image
         src="/images/arvexo-mark-v5.png"
         alt=""

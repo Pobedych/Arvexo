@@ -21,7 +21,7 @@ type SeoCopy = { description: string; title: string };
 const en: Record<BaseRoutePath, SeoCopy> = {
   "/": { title: SITE_TITLE, description: SITE_DESCRIPTION },
   "/about": { title: "About — Arvexo", description: "Arvexo is an independent AI studio building products, conducting research and helping teams create effective AI systems." },
-  "/founder": { title: "Alexey Doborin — Founder and CEO of Arvexo", description: "Alexey Doborin is the founder and CEO of Arvexo and an early-career researcher in artificial intelligence." },
+  "/founder": { title: "Alexey Doborin — Founder of Arvexo and AI Product Developer", description: "Alexey Doborin is the founder and CEO of Arvexo, an AI product developer working on AI effectiveness, knowledge systems and practical automation." },
   "/radar": { title: "Arvexo Radar — Enterprise AI Effectiveness Platform", description: "Understand AI adoption, business value and the practices worth scaling with content-free enterprise telemetry." },
   "/ai-arena": { title: "Arvexo AI Arena — Learning and Competition Platform", description: "A platform for learning, challenging tasks, tournaments, projects and verified AI skills portfolios." },
   "/research": { title: "Independent AI Research — Arvexo", description: "Applied research into AI effectiveness, knowledge systems and human-centered AI products." },
@@ -43,7 +43,7 @@ const en: Record<BaseRoutePath, SeoCopy> = {
 const ru: Record<BaseRoutePath, SeoCopy> = {
   "/": { title: "Arvexo — AI-продукты, исследования и консалтинг", description: "Arvexo развивает Arvexo Radar и Arvexo AI Arena, проводит собственные исследования и помогает командам создавать эффективные AI-системы." },
   "/about": { title: "Об Arvexo", description: "Arvexo — независимая AI-студия: собственные продукты, исследования и помощь командам в создании эффективных AI-систем." },
-  "/founder": { title: "Алексей Доборин — основатель и CEO Arvexo", description: "Алексей Доборин — основатель и CEO Arvexo, начинающий исследователь в области искусственного интеллекта." },
+  "/founder": { title: "Алексей Доборин — основатель Arvexo и разработчик AI-продуктов", description: "Алексей Доборин — основатель и CEO Arvexo, разработчик AI-продуктов в области эффективности AI, систем знаний и автоматизации." },
   "/radar": { title: "Arvexo Radar — платформа эффективности AI", description: "Прозрачность внедрения AI, оценка бизнес-ценности и масштабирование лучших практик без сбора содержимого промптов." },
   "/ai-arena": { title: "Arvexo AI Arena — обучение и соревнования", description: "Платформа для обучения, сложных задач, турниров, проектов и подтверждённого портфолио AI-навыков." },
   "/research": { title: "Исследования в области AI — Arvexo", description: "Прикладные исследования эффективности AI, систем знаний и человекоцентричных AI-продуктов." },
@@ -97,6 +97,6 @@ export function createPageMetadata(path: BaseRoutePath, locale: Locale): Metadat
 }
 
 export const structuredData = [
-  { "@context": "https://schema.org", "@type": "Organization", "@id": `${absoluteUrl("/")}#organization`, name: SITE_NAME, url: SITE_URL, logo: absoluteUrl("/icon.png"), sameAs: ["https://t.me/arvexoai", "https://github.com/Pobedych/Arvexo-Radar", "https://github.com/Pobedych/Arvexo-AI-Arena"], email: "arvexoai@gmail.com", founder: { "@type": "Person", "@id": `${absoluteUrl("/founder")}#person`, name: "Alexey Doborin", alternateName: "Алексей Доборин", url: absoluteUrl("/founder"), sameAs: ["https://github.com/Pobedych"] } },
+  { "@context": "https://schema.org", "@type": "Organization", "@id": `${absoluteUrl("/")}#organization`, name: SITE_NAME, url: SITE_URL, logo: absoluteUrl("/icon.png"), sameAs: ["https://t.me/arvexoai", "https://github.com/Pobedych/Arvexo-Radar", "https://github.com/Pobedych/Arvexo-AI-Arena"], email: "arvexoai@gmail.com", founder: { "@type": "Person", "@id": `${absoluteUrl("/founder")}#person`, name: "Alexey Doborin", alternateName: "Алексей Доборин", url: absoluteUrl("/founder"), sameAs: ["https://github.com/Pobedych", "https://profi.ru/profile/DoborinAA/", "https://52.basketball/comps/player/?compId=60094&id=360793&tab=0"] } },
   { "@context": "https://schema.org", "@type": "WebSite", name: SITE_NAME, url: SITE_URL, inLanguage: ["en", "ru"] }
 ];
