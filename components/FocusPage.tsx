@@ -10,6 +10,8 @@ type FocusPageProps = {
   sections: Array<{ title: string; text: string }>;
   primary?: { label: string; href: string; external?: boolean };
   secondary?: { label: string; href: string; external?: boolean };
+  closingLabel?: string;
+  closingCta?: string;
   children?: ReactNode;
 };
 
@@ -22,7 +24,7 @@ function Action({ action, primary = false }: { action: NonNullable<FocusPageProp
   return <Link className={className} href={action.href}>{action.label}<span aria-hidden="true">↗</span></Link>;
 }
 
-export function FocusPage({ children, label, lead, locale, primary, secondary, sections, statement, title }: FocusPageProps) {
+export function FocusPage({ children, closingCta, closingLabel, label, lead, locale, primary, secondary, sections, statement, title }: FocusPageProps) {
   return (
     <div className="focus-page">
       <section className="focus-hero">
@@ -38,8 +40,8 @@ export function FocusPage({ children, label, lead, locale, primary, secondary, s
       </section>
       {children}
       <section className="focus-footer-cta">
-        <p>{locale === "ru" ? "Есть задача или исследовательский вопрос?" : "Have a problem or research question?"}</p>
-        <a href="mailto:arvexoai@gmail.com">{locale === "ru" ? "Написать Arvexo" : "Contact Arvexo"}<span aria-hidden="true">↗</span></a>
+        <p>{closingLabel ?? (locale === "ru" ? "Есть задача или исследовательский вопрос?" : "Have a problem or research question?")}</p>
+        <a href="mailto:arvexoai@gmail.com">{closingCta ?? (locale === "ru" ? "Написать Arvexo" : "Contact Arvexo")}<span aria-hidden="true">↗</span></a>
       </section>
     </div>
   );

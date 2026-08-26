@@ -10,6 +10,10 @@ import { chromeContent, footerSocials, getLocaleFromPath, localizeHref } from "@
 
 export function Footer() {
   const pathname = usePathname();
+  if (pathname.startsWith("/admin")) {
+    return null;
+  }
+
   const locale = getLocaleFromPath(pathname);
   const copy = chromeContent[locale];
 

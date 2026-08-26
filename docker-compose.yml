@@ -14,3 +14,10 @@ services:
       HOSTNAME: "0.0.0.0"
       ARVEXO_ACCOUNT_API_URL: "${ARVEXO_ACCOUNT_API_URL:-http://127.0.0.1:8001}"
       FASTAPI_AUTH_URL: "${FASTAPI_AUTH_URL:-}"
+      DATA_DIR: "/data"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-}"
+    volumes:
+      - arvexo-data:/data
+
+volumes:
+  arvexo-data:

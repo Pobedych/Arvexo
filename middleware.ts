@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 const LOCALE_COOKIE = "arx_locale";
+const ADMIN_SESSION_COOKIE = "arx_admin_session";
 
 function preferredLocale(acceptLanguage: string | null): "ru" | "en" {
   if (!acceptLanguage) return "en";
@@ -14,6 +15,12 @@ export function middleware(request: NextRequest) {
   const isRu = pathname === "/ru" || pathname.startsWith("/ru/");
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-locale", isRu ? "ru" : "en");
+
+  if (pathname.startsWith("/admin") && pathname !== "/admin/login" && !request.cookies.get(ADMIN_SESSION_COOKIE)) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/admin/login";
+    return NextResponse.redirect(url);
+  }
 
   if (pathname === "/" && !request.cookies.get(LOCALE_COOKIE)) {
     const locale = preferredLocale(request.headers.get("accept-language"));

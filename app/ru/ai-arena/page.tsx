@@ -8,5 +8,5 @@ export default function ArenaPage() {
     { title: "Учиться", text: "Структурированные треки по AI и математике объединяют теорию, задачи и быструю обратную связь." },
     { title: "Соревноваться", text: "Турниры и нестандартные задачи делают прогресс видимым и показывают зоны для углублённого обучения." },
     { title: "Подтверждать навыки", text: "Лаборатории, проекты и проверенные результаты формируют портфолио реальных достижений." }
-  ]} primary={{ label: "Репозиторий проекта", href: "https://github.com/Pobedych/Arvexo-AI-Arena", external: true }} secondary={{ label: "Обсудить сотрудничество", href: "mailto:arvexoai@gmail.com", external: true }} />;
+  ]} primary={{ label: "Репозиторий проекта", href: "https://github.com/Pobedych/Arvexo-AI-Arena", external: true }} secondary={{ label: "Обсудить сотрудничество", href: "mailto:arvexoai@gmail.com", external: true }} closingLabel="Хотите привести AI Arena своим студентам?" closingCta="Обсудить сотрудничество" />;
 }

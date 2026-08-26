@@ -22,7 +22,7 @@ export function Header() {
     setMounted(true);
   }, []);
 
-  if (pathname === "/" || pathname === "/ru") {
+  if (pathname === "/" || pathname === "/ru" || pathname.startsWith("/admin")) {
     return null;
   }
 

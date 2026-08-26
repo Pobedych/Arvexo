@@ -8,6 +8,9 @@ tmp
 .next
 out
 
+# local research articles data
+.data
+
 # production
 build
 dist

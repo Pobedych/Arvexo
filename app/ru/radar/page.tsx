@@ -8,5 +8,5 @@ export default function RadarPage() {
     { title: "Прозрачность", text: "Показывает паттерны внедрения и AI-сценарии команд без сбора содержимого промптов." },
     { title: "Бизнес-ценность", text: "Связывает использование с TCO, экономией времени, FTE-эквивалентом, ROI и сроком окупаемости." },
     { title: "Обмен знаниями", text: "Помогает находить, проверять, публиковать и внедрять практики, которые уже работают внутри компании." }
-  ]} primary={{ label: "Репозиторий проекта", href: "https://github.com/Pobedych/Arvexo-Radar", external: true }} secondary={{ label: "Обсудить пилот", href: "mailto:arvexoai@gmail.com", external: true }} />;
+  ]} primary={{ label: "Открыть Radar", href: "https://radar.arvexo.ru", external: true }} secondary={{ label: "Репозиторий проекта", href: "https://github.com/Pobedych/Arvexo-Radar", external: true }} closingLabel="Хотите запустить пилот Radar в своей компании?" closingCta="Обсудить пилот" />;
 }

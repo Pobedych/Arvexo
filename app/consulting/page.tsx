@@ -8,5 +8,5 @@ export default function ConsultingPage() {
     { title: "Audit and strategy", text: "Map workflows, constraints and opportunities before choosing models, vendors or architecture." },
     { title: "Prototype and integrate", text: "Build a narrow working prototype and connect it to the tools and knowledge already used by the team." },
     { title: "Measure and scale", text: "Define adoption, quality, cost and outcome signals that support a responsible scale-up decision." }
-  ]} primary={{ label: "Discuss your project", href: "mailto:arvexoai@gmail.com", external: true }} secondary={{ label: "View Arvexo Radar", href: "/radar" }} />;
+  ]} primary={{ label: "Discuss your project", href: "mailto:arvexoai@gmail.com", external: true }} secondary={{ label: "View Arvexo Radar", href: "/radar" }} closingLabel="Have an AI idea that needs scoping?" closingCta="Discuss your project" />;
 }

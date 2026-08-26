@@ -8,5 +8,5 @@ export default function ConsultingPage() {
     { title: "Аудит и стратегия", text: "Разбираем процессы, ограничения и возможности до выбора моделей, поставщиков и архитектуры." },
     { title: "Прототип и интеграция", text: "Создаём узкий рабочий прототип и связываем его с инструментами и знаниями, которыми уже пользуется команда." },
     { title: "Измерение и масштабирование", text: "Определяем метрики внедрения, качества, стоимости и результата для обоснованного решения о масштабировании." }
-  ]} primary={{ label: "Обсудить проект", href: "mailto:arvexoai@gmail.com", external: true }} secondary={{ label: "Смотреть Arvexo Radar", href: "/ru/radar" }} />;
+  ]} primary={{ label: "Обсудить проект", href: "mailto:arvexoai@gmail.com", external: true }} secondary={{ label: "Смотреть Arvexo Radar", href: "/ru/radar" }} closingLabel="Есть идея с AI, которую нужно проработать?" closingCta="Обсудить проект" />;
 }
