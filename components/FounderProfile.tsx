@@ -151,17 +151,17 @@ export function FounderProfile({ articles, locale }: FounderProfileProps) {
               ))}
             </div>
           </section>
-
-          <section className="founder-closing" aria-labelledby="founder-closing-title">
-            <p>{c.closingLabel}</p>
-            <div>
-              <h2 id="founder-closing-title">{c.closingTitle}</h2>
-              <span>{c.closingText}</span>
-              <Link href={isRu ? "/ru/contacts" : "/contacts"}>{c.closingCta}<span aria-hidden="true">↗</span></Link>
-            </div>
-          </section>
         </div>
       </div>
+
+      <section className="founder-closing" aria-labelledby="founder-closing-title">
+        <p>{c.closingLabel}</p>
+        <div>
+          <h2 id="founder-closing-title">{c.closingTitle}</h2>
+          <span>{c.closingText}</span>
+          <Link href={isRu ? "/ru/contacts" : "/contacts"}>{c.closingCta}<span aria-hidden="true">↗</span></Link>
+        </div>
+      </section>
     </div>
   );
 }
