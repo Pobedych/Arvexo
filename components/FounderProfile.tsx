@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { absoluteUrl } from "@/lib/seo";
 
-type FounderProfileProps = { locale: "en" | "ru" };
+type FounderProfileProps = {
+  locale: "en" | "ru";
+  articles: Array<{ slug: string; title: string; excerpt: string }>;
+};
 
 const profiles = {
   github: "https://github.com/Pobedych",
@@ -30,6 +33,7 @@ const copy = {
       { title: "Profi.ru", text: "Математика и информатика", href: profiles.profi },
       { title: "Баскетбол", text: "Профиль игрока и турниры", href: profiles.basketball }
     ],
+    writingLabel: "Заметки",
     closingLabel: "Связаться",
     closingTitle: "Продукт, исследование или внедрение AI?",
     closingText: "Обсудим задачу, формат работы и следующий проверяемый шаг.",
@@ -55,6 +59,7 @@ const copy = {
       { title: "Profi.ru", text: "Mathematics and computer science", href: profiles.profi },
       { title: "Basketball", text: "Player profile and competitions", href: profiles.basketball }
     ],
+    writingLabel: "Writing",
     closingLabel: "Contact",
     closingTitle: "A product, research question or AI implementation?",
     closingText: "Let's discuss the problem, the working format and the next verifiable step.",
@@ -62,7 +67,7 @@ const copy = {
   }
 } as const;
 
-export function FounderProfile({ locale }: FounderProfileProps) {
+export function FounderProfile({ articles, locale }: FounderProfileProps) {
   const isRu = locale === "ru";
   const c = copy[locale];
   const profilePath = isRu ? "/ru/founder" : "/founder";
@@ -122,6 +127,18 @@ export function FounderProfile({ locale }: FounderProfileProps) {
               </Link>
             ))}
           </section>
+
+          {articles.length > 0 && (
+            <section className="founder-ledger" aria-label={c.writingLabel}>
+              {articles.map((article) => (
+                <Link href={isRu ? `/ru/research/${article.slug}` : `/research/${article.slug}`} className="founder-row" key={article.slug}>
+                  <span className="founder-row-index">{c.writingLabel}</span>
+                  <h3>{article.title}</h3>
+                  <p>{article.excerpt}</p>
+                </Link>
+              ))}
+            </section>
+          )}
 
           <section className="founder-elsewhere" aria-labelledby="founder-elsewhere-title">
             <p className="founder-section-label founder-elsewhere-head" id="founder-elsewhere-title">{c.elsewhereLabel}</p>
